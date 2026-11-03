@@ -1,0 +1,51 @@
+@model IReadOnlyList<Dewi.Pages.SepBrochure>
+<section class="sep-presentation" aria-labelledby="sep-presentation-title" data-sep-presentation>
+    <div class="sep-presentation-heading">
+        <div><p class="eyebrow">EXPLORE SEP</p><h2 id="sep-presentation-title">Explore the SEP brochures</h2></div>
+        <span class="sep-deck-label"><i class="bi bi-journals" aria-hidden="true"></i> @Model.Count brochures</span>
+    </div>
+    <p class="sep-presentation-intro">Browse all six modules and the complete deployment workflow. These eight brochure spreads cover the full SEP presentation, with individual and complete PDF downloads.</p>
+    <div class="sep-topic-links" aria-label="Brochure topics">
+        @for (var index = 0; index < Model.Count; index++)
+        {
+            <a href="#sep-slide-@(index + 1)" data-sep-jump="@index">@Model[index].Title</a>
+        }
+    </div>
+    <div class="sep-viewer" tabindex="0" role="region" aria-label="SEP brochure viewer. Use left and right arrow keys to browse.">
+        <div class="sep-slide-stage">
+            <img data-sep-image src="~/assets/brochures/sep/01-Platform-Overview.webp" width="2400" height="1600" alt="Brochure 1: @Model[0].Title" loading="lazy" asp-append-version="true">
+            <button class="sep-expand" type="button" data-sep-expand hidden aria-label="Enlarge brochure"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i><span>Enlarge</span></button>
+        </div>
+        <div class="sep-viewer-controls" data-sep-controls hidden>
+            <div class="sep-slide-caption" aria-live="polite" aria-atomic="true"><span data-sep-count>01 / @Model.Count</span><strong data-sep-title>@Model[0].Title</strong></div>
+            <div class="sep-navigation">
+                <button type="button" data-sep-prev aria-label="Previous brochure" disabled><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
+                <select data-sep-select aria-label="Choose a brochure">
+                    @for (var index = 0; index < Model.Count; index++)
+                    {
+                        <option value="@index">@(index + 1). @Model[index].Title</option>
+                    }
+                </select>
+                <button type="button" data-sep-next aria-label="Next brochure"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <nav class="sep-thumbnails" aria-label="SEP brochures">
+        @for (var index = 0; index < Model.Count; index++)
+        {
+            var stem = Model[index].File;
+            var brochureUrl = Url.Content($"~/assets/brochures/sep/{stem}.webp");
+            var pdfUrl = Url.Content($"~/assets/brochures/sep/{stem}.pdf");
+            <a id="sep-slide-@(index + 1)" href="@brochureUrl" target="_blank" rel="noopener" data-sep-slide="@index" data-title="@Model[index].Title" data-pdf="@pdfUrl" aria-label="Brochure @(index + 1): @Model[index].Title" aria-current="@(index == 0 ? "true" : null)">
+                <img src="~/assets/brochures/sep/@(stem)-thumb.webp" width="360" height="240" alt="" loading="lazy" asp-append-version="true"><span>@((index + 1).ToString("D2"))</span>
+            </a>
+        }
+    </nav>
+    <div class="sep-downloads"><p><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Take the brochures with you.</p><div><a href="~/assets/brochures/sep/01-Platform-Overview.pdf" data-sep-download download>Download this brochure <i class="bi bi-download" aria-hidden="true"></i></a><a href="~/assets/brochures/sep/SEP-Complete-Module-Brochures.pdf" download>Download all brochures <i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i></a></div></div>
+    <dialog class="sep-dialog" aria-labelledby="sep-expanded-title">
+        <div class="sep-dialog-heading"><h2 id="sep-expanded-title">SEP brochures</h2><button type="button" data-sep-close aria-label="Close enlarged brochure"><i class="bi bi-x-lg" aria-hidden="true"></i></button></div>
+        <img data-sep-image src="~/assets/brochures/sep/01-Platform-Overview.webp" width="2400" height="1600" alt="Brochure 1: @Model[0].Title" loading="lazy" asp-append-version="true">
+        <div class="sep-dialog-footer"><button type="button" data-sep-prev aria-label="Previous brochure" disabled><i class="bi bi-arrow-left" aria-hidden="true"></i></button><span data-sep-dialog-count>1 / @Model.Count — @Model[0].Title</span><button type="button" data-sep-next aria-label="Next brochure"><i class="bi bi-arrow-right" aria-hidden="true"></i></button></div>
+        <a class="sep-original-slide" href="~/assets/brochures/sep/01-Platform-Overview.webp" target="_blank" rel="noopener">Open brochure at full resolution <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+    </dialog>
+</section>

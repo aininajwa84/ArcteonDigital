@@ -1,0 +1,125 @@
+@page "/service-details"
+@model Dewi.Pages.ServiceDetailsModel
+@{
+    ViewData["Title"] = Model.Solution?.Title ?? "Our expertise";
+    ViewData["BodyClass"] = "service-details-page";
+    var hasSolution = Model.Solution is not null;
+    var detailContent = Model.DetailContent;
+    var bannerImage = hasSolution ? Url.Content($"~/assets/img/{Model.DetailPhoto.File}") : null;
+}
+<main class="main @(hasSolution ? "product-details-refined" : "")">
+    <div class="page-title dark-background" style="@(hasSolution ? $"background-image: url('{bannerImage}')" : null)">
+        <div class="container position-relative">
+            <p class="eyebrow">@(hasSolution ? $"{(Model.Solution!.IsClientSolution ? "CLIENT SOLUTION" : "OUR PRODUCT")} / {Model.Solution.Category}" : "BUSINESS SOLUTIONS / ARCTEON DIGITAL")</p>
+            @if (Model.Solution is { } bannerProduct)
+            {
+                <div class="product-banner-brand">
+                    @if (bannerProduct.BannerLogoFile is { } logoFile)
+                    {
+                        <img class="product-logo-image product-banner-image product-logo-@bannerProduct.Key" src="~/assets/img/products/@logoFile" alt="@bannerProduct.LogoAlt" asp-append-version="true">
+                    }
+                    else
+                    {
+                        <span class="product-brand @bannerProduct.LogoClass product-banner-logo" role="img" aria-label="@bannerProduct.LogoAlt"></span>
+                    }
+                    <h1>@bannerProduct.Title</h1>
+                </div>
+            }
+            else
+            {
+                <h1>@ViewData["Title"]</h1>
+            }
+            <p>@(Model.Solution?.Description ?? "Connected technology, shaped around your business.")</p>
+            <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/#solutions">Solutions</a></li><li class="current">@ViewData["Title"]</li></ol></nav>
+        </div>
+    </div>
+    <section class="section solution-detail"><div class="container"><div class="row gy-5 gx-lg-5">
+        <aside class="col-lg-4">
+            <div class="product-detail-sidebar">
+                <nav class="product-sidebar-nav" aria-labelledby="product-sidebar-title">
+                    <h2 id="product-sidebar-title"><span class="d-none d-lg-inline">Our Products</span><button class="product-sidebar-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#product-sidebar-links" aria-expanded="false" aria-controls="product-sidebar-links">Browse our products <i class="bi bi-chevron-down" aria-hidden="true"></i></button></h2>
+                    <div id="product-sidebar-links" class="collapse d-lg-block"><ul>
+                    @foreach (var product in Model.Products)
+                    {
+                        var isCurrent = Model.Solution?.Key == product.Key;
+                        <li><a asp-page="/ServiceDetails" asp-route-solution="@product.Key" class="@(isCurrent ? "active" : null)" aria-current="@(isCurrent ? "page" : null)"><i class="bi bi-arrow-right-circle" aria-hidden="true"></i><span>@product.Title</span></a></li>
+                    }
+                    </ul></div>
+                </nav>
+                <div class="product-sidebar-contact">
+                    <i class="bi bi-headset" aria-hidden="true"></i>
+                    <h2>Have a question?</h2>
+                    <p>Let’s discuss the right solution for your business.</p>
+                    <a href="tel:+603-92268079">+603-92268079</a>
+                    <a href="mailto:enquiry@arcteondigital.com.my">enquiry@arcteondigital.com.my</a>
+                </div>
+            </div>
+        </aside>
+        <div class="col-lg-8 product-detail-content">
+        @if (Model.Solution?.Key == "assets")
+        {
+            <partial name="_SepPresentation" model="Dewi.Pages.SepPresentation.Brochures" />
+        }
+        @if (Model.Solution is { } selected)
+        {
+            <p class="eyebrow">@(selected.IsClientSolution ? "CLIENT PROJECT / HOW IT HELPS" : "HOW IT HELPS")</p>
+            <h2 class="product-content-title">@detailContent.Heading</h2>
+            <p class="product-content-intro">@(selected.IsClientSolution ? "Developed for a client’s operational requirements. Explore the project areas below and talk to us about a similar workflow for your business." : "Explore the core areas below, then talk to us about the way your team works.")</p>
+            <dl class="product-feature-list">
+            @for (var index = 0; index < selected.Features.Length; index++)
+            {
+                <div><dt><i class="bi bi-check2-circle" aria-hidden="true"></i>@selected.Features[index]</dt><dd>@detailContent.FeatureDescriptions[index]</dd></div>
+            }
+            </dl>
+        }
+        else
+        {
+            <p>Explore our three core services: AI, Software Customization and Digital Transformation. We help you identify useful AI applications, adapt software to your workflows and connect your business processes with digital tools.</p>
+            <a href="/#services" class="inline-link">Explore all services <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        }
+        @if (Model.Brochure is { } brochure)
+        {
+            <section class="product-brochure" aria-labelledby="product-brochure-title">
+                <div class="product-brochure-heading"><h2 id="product-brochure-title">Product brochure</h2><a href="~/assets/brochures/@brochure.File" download class="product-brochure-download">Download brochure <i class="bi bi-download" aria-hidden="true"></i></a></div>
+                <a href="~/assets/brochures/@brochure.File" class="product-brochure-preview glightbox" data-gallery="product-brochure" data-title="@brochure.Title" target="_blank" rel="noopener" aria-label="View @brochure.Title brochure full size">
+                    <img src="~/assets/brochures/@brochure.File" alt="@brochure.Title brochure with product features and module information" width="1536" height="1024" loading="lazy" asp-append-version="true">
+                </a>
+                <p class="product-brochure-caption">@brochure.Title · <a href="~/assets/brochures/@brochure.File" target="_blank" rel="noopener">View full-size brochure <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a></p>
+            </section>
+        }
+        @if (Model.HasNexusPresentation)
+        {
+            <section class="product-brochure" aria-labelledby="nexus-presentation-title">
+                <div class="product-brochure-heading"><h2 id="nexus-presentation-title">Explore Arcteon Nexus</h2><a href="~/assets/brochures/nexus/arcteon-nexus-presentation.pdf" download class="product-brochure-download">Download PDF <i class="bi bi-download" aria-hidden="true"></i></a></div>
+                <p>See how the five modules can work independently and connect as your business grows.</p>
+                <a href="~/assets/brochures/nexus/arcteon-nexus-presentation.pdf" class="product-brochure-preview" target="_blank" rel="noopener" aria-label="Read the 10-page Arcteon Nexus presentation">
+                    <img src="~/assets/brochures/nexus/arcteon-nexus-cover.webp" alt="Arcteon Nexus - Connected Business Transformation Platform. Open the complete product presentation." width="1200" height="675" loading="lazy" asp-append-version="true">
+                </a>
+                <p class="product-brochure-caption"><a href="~/assets/brochures/nexus/arcteon-nexus-presentation.pdf" target="_blank" rel="noopener">Read the full 10-page presentation <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a></p>
+            </section>
+        }
+        @if (hasSolution)
+        {
+            <div class="product-enquiry"><p>@detailContent.Enquiry</p><a href="/#contact-project" class="digital-btn">@(Model.Solution!.IsClientSolution ? "Discuss a similar project" : $"Enquire about {Model.Solution.Title}") <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><p class="product-scope-note">Features, integrations and delivery timelines are confirmed during discovery.</p></div>
+        }
+        else
+        {
+            <p>We’ll work with you to agree on requirements, integrations, access controls and a practical delivery plan. Features and timelines are confirmed during discovery.</p>
+            <a href="/#contact" class="digital-btn">Discuss this solution <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        }
+        </div>
+    </div></div></section>
+</main>
+
+@section Styles {
+    @if (Model.Solution?.Key == "assets")
+    {
+        <link href="~/assets/css/sep-presentation.css" rel="stylesheet" asp-append-version="true">
+    }
+}
+@section Scripts {
+    @if (Model.Solution?.Key == "assets")
+    {
+        <script src="~/assets/js/sep-presentation.js" asp-append-version="true"></script>
+    }
+}

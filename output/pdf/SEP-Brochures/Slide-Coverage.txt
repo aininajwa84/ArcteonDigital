@@ -1,0 +1,12 @@
+SEP brochure content coverage
+
+01-Platform-Overview: source slides 1, 2, 3, 22
+02-Endpoint-Management: source slides 4, 5
+03-IT-Service-Desk: source slides 6, 7
+04-System-Monitoring: source slides 8, 9
+05-Smart-Analytics: source slides 10, 11
+06-IT-Asset-Management: source slides 12, 13
+07-Workflow-Automation: source slides 14, 15, 16
+08-Device-Deployment: source slides 17, 18, 19, 20, 21
+
+All 22 slides are covered. All six core modules have dedicated brochure spreads. Workflow Automation also includes digital forms, digital signatures, preventive maintenance, device deployment, device tagging and deployment checklists.

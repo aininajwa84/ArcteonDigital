@@ -1,0 +1,11 @@
+                <form action="/forms/careers" method="post" class="php-email-form">
+                    @Html.AntiForgeryToken()
+                    <div class="row gy-4">
+                        <div class="col-md-6"><label class="form-label" for="job-name">Your name</label><input id="job-name" class="form-control" name="name" autocomplete="name" maxlength="200" required></div>
+                        <div class="col-md-6"><label class="form-label" for="job-email">Email address</label><input id="job-email" class="form-control" type="email" name="email" autocomplete="email" maxlength="254" required></div>
+                        <div class="col-12"><label class="form-label" for="job-role">Role or area of interest</label><input id="job-role" class="form-control" name="subject" placeholder="e.g. AI engineer, software developer, internship" maxlength="300" required></div>
+                        <div class="col-12"><label class="form-label" for="job-portfolio">Portfolio or LinkedIn URL (optional)</label><input id="job-portfolio" class="form-control" type="url" name="portfolio" placeholder="https://" maxlength="2000"></div>
+                        <div class="col-12"><label class="form-label" for="job-message">Tell us about yourself</label><textarea id="job-message" class="form-control" name="message" rows="6" maxlength="10000" placeholder="Your experience, interests and availability" required></textarea></div>
+                        <div class="col-12"><div class="loading" role="status">Saving your enquiry…</div><div class="error-message" role="alert"></div><div class="sent-message" role="status">Your job enquiry has been saved locally. Thank you!</div><button type="submit">Send Enquiry</button></div>
+                    </div>
+                </form>

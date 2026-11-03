@@ -1,0 +1,110 @@
+@page "/"
+@model Dewi.Pages.IndexModel
+@{
+    ViewData["Title"] = "AI, Software Customization & Digital Transformation";
+    ViewData["BodyClass"] = "index-page digital-home";
+}
+<main class="main">
+    <section id="hero" class="digital-hero dark-background">
+        <img class="hero-photo" src="~/assets/img/computer-science-hero.jpg" alt="Programming source code displayed on a computer monitor">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="container hero-content">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-8">
+                    <p class="eyebrow"><span></span> YOUR NEXT CHAPTER STARTS HERE</p>
+                    <h1>Better technology.<br>Stronger business.<br><em>Built together.</em></h1>
+                    <p class="hero-intro">AI, software customization and digital transformation. Practical technology solutions shaped around your business, your workflows and your next move.</p>
+                    <div class="hero-actions"><a class="digital-btn" href="#services">Explore our expertise <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+            <div class="hero-bottom"><span>AI / SOFTWARE CUSTOMIZATION / DIGITAL TRANSFORMATION</span><div><span>Business-led strategy</span><span>Scalable architecture</span><span>Practical guidance</span></div></div>
+        </div>
+    </section>
+    <section id="about" class="section digital-about">
+        <div class="container"><div class="row align-items-center gy-5 gx-lg-5">
+            <div class="col-lg-6 about-visual about-team-visual"><img src="~/assets/img/malaysian-it-team.png" alt="Team collaborating around laptops and a whiteboard in a bright office" width="1408" height="768" loading="lazy" asp-append-version="true"><div class="image-caption"><i class="bi bi-people" aria-hidden="true"></i><span>Technology works better<br><strong>when people come first.</strong></span></div></div>
+            <div class="col-lg-6"><p class="eyebrow">01 / ABOUT ARCTEON DIGITAL</p><h2 class="display-heading">A digital partner.<br>A human approach.</h2><p class="lead-copy">Good solutions begin with understanding your business.</p><p>We bring your goals into focus, simplify complex challenges and build technology around the people who use it. From the first conversation to ongoing support, we work alongside your team.</p><ul class="value-list"><li><i class="bi bi-check2" aria-hidden="true"></i> Client-First Approach</li><li><i class="bi bi-check2" aria-hidden="true"></i> Innovative Technology Integration</li><li><i class="bi bi-check2" aria-hidden="true"></i> Tailored Digital Solutions</li><li><i class="bi bi-check2" aria-hidden="true"></i> Strategic Partnership</li><li><i class="bi bi-check2" aria-hidden="true"></i> Your Digital Innovation Partner</li></ul><a class="inline-link" href="#services">Explore our services <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+        </div></div>
+    </section>
+    <section id="services" class="section expertise-section">
+        <div class="container"><div class="section-heading"><div><p class="eyebrow">02 / OUR EXPERTISE</p><h2 class="display-heading">Three core services.<br>One connected partner.</h2></div><p>Apply AI. Adapt your software. Transform your processes.<br>Technology that starts with your business needs.</p></div>
+        <div class="expertise-grid">
+        @foreach (var service in Model.Services)
+        {
+            <article id="service-@service.Number" class="expertise-card"><i class="bi @service.Icon service-watermark" aria-hidden="true"></i><div class="card-topline"><i class="bi @service.Icon" aria-hidden="true"></i><span>@service.Number</span></div><h3>@service.Title</h3><p>@service.Description</p><a asp-page="/Expertise" asp-route-service="@service.Key" class="service-explore" aria-label="Explore @service.Title">Explore service <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></article>
+        }
+        </div></div>
+    </section>
+    <section id="solutions" class="section solutions-section products-enhanced">
+        <div class="container">
+            <div class="section-heading"><div><p class="eyebrow">03 / OUR PRODUCTS</p><h2 class="display-heading">Built for the work<br>that matters.</h2></div><p>Business systems for your daily operations.<br>Find the right fit for your people and processes.</p></div>
+            <div class="solution-group-heading"><h3>Our Products</h3><p>Our business systems, built to support your daily operations.</p></div>
+            <div class="solution-grid owned-product-grid"><partial name="_SolutionCards" model="Model.Products" /></div>
+        </div>
+    </section>
+    <partial name="_CareersSection" />
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container">
+        <div class="section-heading contact-heading"><div><p class="eyebrow">CONTACT ARCTEON DIGITAL</p><h2 class="display-heading">Start with a conversation.</h2></div><p>Have a project in mind or a question?<br>Tell us how we can help.</p></div>
+        <div class="row gy-4 gx-lg-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="contact-details-panel">
+              <p class="eyebrow">GET IN TOUCH</p><h3>We’d like to hear from you.</h3><p class="contact-details-intro">Talk to us about AI, software customization and digital transformation.</p>
+              <a class="contact-detail-row" href="mailto:enquiry@arcteondigital.com.my"><span class="contact-detail-icon"><i class="bi bi-envelope" aria-hidden="true"></i></span><span><small>EMAIL US</small><strong>enquiry@arcteondigital.com.my</strong></span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                        <a class="contact-detail-row" href="tel:+601162671878"><span class="contact-detail-icon"><i class="bi bi-telephone" aria-hidden="true"></i></span><span><small>CALL US</small><strong>+603-92268079</strong></span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              <button type="button" class="contact-detail-row contact-map-action" data-bs-toggle="modal" data-bs-target="#locationMap"><span class="contact-detail-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span><span><small>VISIT OUR OFFICE</small><strong>Queen’s Avenue, 8-6-3, Jalan Bayam, Cheras,<br>55100 Kuala Lumpur, Malaysia</strong><em>View map &amp; directions</em></span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></button>
+              <div class="contact-hours"><i class="bi bi-clock" aria-hidden="true"></i><div><strong>Working hours</strong><p>Monday–Friday<br>9.00 am–6.00 pm (Malaysia time)</p></div></div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="contact-enquiry-card">
+              <div class="contact-form-heading"><h3>Send an enquiry</h3><p>Tell us about your project and how we can help.</p></div>
+            <div class="enquiry-content">
+              <div class="enquiry-panel" id="contact-project" role="region" aria-label="Project enquiry form">
+            <form action="/forms/contact" method="post" class="php-email-form">
+            @Html.AntiForgeryToken()
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <label class="form-label" for="contact-name">Your name *</label>
+<input id="contact-name" type="text" name="name" class="form-control" placeholder="Your full name" autocomplete="name" maxlength="200" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <label class="form-label" for="contact-email">Email address *</label>
+<input id="contact-email" type="email" class="form-control" name="email" placeholder="you@company.com" autocomplete="email" maxlength="254" required>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="form-label" for="contact-subject">Subject *</label>
+<input id="contact-subject" type="text" class="form-control" name="subject" placeholder="e.g. AI automation, software customization or digital transformation" maxlength="300" required>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="form-label" for="contact-message">Your message *</label><textarea id="contact-message" class="form-control" name="message" rows="5" placeholder="Tell us what you have in mind and how we can help." maxlength="10000" required></textarea>
+                </div>
+
+                <div class="col-md-12 contact-submit-row">
+                  <div class="loading" role="status">Saving your enquiry…</div>
+                  <div class="error-message" role="alert"></div>
+                  <div class="sent-message" role="status">Your message has been saved locally. Thank you!</div>
+
+                  <p class="required-note">* Required fields</p><button type="submit">Send Message <i class="bi bi-arrow-up-right" aria-hidden="true"></i></button>
+                </div>
+
+              </div>
+            </form>
+              </div>
+            </div>
+            </div>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+</main>
+<partial name="_CareerApplication" />

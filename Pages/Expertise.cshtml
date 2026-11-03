@@ -1,0 +1,58 @@
+@page "/services/{service}"
+@model Dewi.Pages.ExpertiseModel
+@{
+    var current = Model.CurrentService;
+    ViewData["Title"] = current.Title;
+    ViewData["BodyClass"] = "service-details-page";
+}
+<main class="main product-details-refined">
+    <div class="page-title dark-background" style="background-image: url('/assets/img/digital-business-workflow.jpg')">
+        <div class="container position-relative">
+            <p class="eyebrow">OUR SERVICES / ARCTEON DIGITAL</p>
+            <h1>@current.Title</h1>
+            <p>@current.Description</p>
+            <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/#services">Services</a></li><li class="current">@current.Title</li></ol></nav>
+        </div>
+    </div>
+    <section class="section solution-detail">
+        <div class="container"><div class="row gy-5 gx-lg-5">
+            <aside class="col-lg-4">
+                <div class="product-detail-sidebar">
+                    <nav class="product-sidebar-nav" aria-labelledby="service-sidebar-title">
+                        <h2 id="service-sidebar-title"><span class="d-none d-lg-inline">Our Services</span><button class="product-sidebar-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#service-sidebar-links" aria-expanded="false" aria-controls="service-sidebar-links">Browse our services <i class="bi bi-chevron-down" aria-hidden="true"></i></button></h2>
+                        <div id="service-sidebar-links" class="collapse d-lg-block"><ul>
+                        @foreach (var service in Model.Services)
+                        {
+                            var isCurrent = service.Key == current.Key;
+                            <li><a asp-page="/Expertise" asp-route-service="@service.Key" class="@(isCurrent ? "active" : null)" aria-current="@(isCurrent ? "page" : null)"><i class="bi @service.Icon" aria-hidden="true"></i><span>@service.Title</span></a></li>
+                        }
+                        </ul></div>
+                    </nav>
+                    <div class="product-sidebar-contact">
+                        <i class="bi bi-headset" aria-hidden="true"></i>
+                        <h2>Have a question?</h2>
+                        <p>Talk to us about your business requirements.</p>
+                        <a href="tel:+60392268079">+603 9226 8079</a>
+                        <a href="mailto:enquiry@arcteondigital.com.my">enquiry@arcteondigital.com.my</a>
+                    </div>
+                </div>
+            </aside>
+            <div class="col-lg-8 product-detail-content">
+                <p class="eyebrow">HOW WE CAN HELP</p>
+                <h2 class="product-content-title">@current.Title</h2>
+                <p class="product-content-intro">@current.Detail</p>
+                <dl class="product-feature-list">
+                @foreach (var area in Model.Areas)
+                {
+                    <div><dt><i class="bi bi-check2-circle" aria-hidden="true"></i>@area.Title</dt><dd>@area.Description</dd></div>
+                }
+                </dl>
+                <div class="product-enquiry">
+                    <p>Tell us what you want to improve. We’ll work with you to clarify requirements, review your current systems and agree on a practical next step.</p>
+                    <a href="/#contact-project" class="digital-btn">Discuss your project <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                    <p class="product-scope-note">Scope, integrations and delivery timelines are confirmed during discovery.</p>
+                </div>
+            </div>
+        </div></div>
+    </section>
+</main>

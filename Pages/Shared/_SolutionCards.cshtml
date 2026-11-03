@@ -1,0 +1,17 @@
+@model IReadOnlyList<Dewi.Pages.BusinessSolution>
+@foreach (var solution in Model)
+{
+    <a href="/service-details?solution=@solution.Key" class="solution-card">
+        <div class="product-brand-panel product-panel-@solution.Key @(solution.LogoFile is not null ? "has-standalone-logo" : "")">
+            @if (solution.LogoFile is { } logoFile)
+            {
+                <img class="product-logo-image product-logo-@solution.Key" src="~/assets/img/products/@logoFile" alt="@solution.LogoAlt" loading="lazy" asp-append-version="true">
+            }
+            else
+            {
+                <span class="product-brand @solution.LogoClass" role="img" aria-label="@solution.LogoAlt"></span>
+            }
+        </div>
+        <div class="product-card-body"><span class="solution-category">@solution.Category</span><h3>@solution.Title</h3><p>@solution.Description</p><span class="solution-link">@(solution.IsClientSolution ? "Explore client solution" : "Explore product") <span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span></div>
+    </a>
+}

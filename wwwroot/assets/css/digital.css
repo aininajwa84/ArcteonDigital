@@ -1,0 +1,220 @@
+/* Dewi digital direction: technology-led layouts with a people-first narrative. */
+:root { --accent-color: #f47845; --heading-font: "Inter", sans-serif; --nav-font: "Inter", sans-serif; }
+html { scroll-padding-top: 90px; }
+body { overflow-x: hidden; }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid #22b8bd; outline-offset: 5px; }
+.header { background: rgba(9, 23, 35, .92); padding: 20px 0; border-bottom: 1px solid #ffffff16; }
+.header .logo h1 { letter-spacing: -1.5px; }
+.header .logo h1::after { content: "."; color: var(--accent-color); }
+.header .cta-btn { border: 1px solid #ffffff60; border-radius: 4px; }
+.header .cta-btn:hover { border-color: var(--accent-color); }
+.eyebrow { font: 600 11px/1.6 "Inter", sans-serif; letter-spacing: 2px; color: #b34d22; margin-bottom: 23px; }
+.display-heading { font-size: clamp(30px, 3.2vw, 46px); line-height: 1.17; font-weight: 650; letter-spacing: -1.7px; margin-bottom: 24px; color: #142c3d; }
+.digital-home .section { padding: 100px 0; }
+.digital-hero { padding: 175px 0 0; min-height: 790px; position: relative; overflow: hidden; background: #0a1b2b; }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .65; }
+.digital-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #0a192bf0 15%, #0a192b65 90%); }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(#ffffff07 1px, transparent 1px), linear-gradient(90deg, #ffffff07 1px, transparent 1px); background-size: 90px 90px; z-index: 1; }
+.hero-content { position: relative; z-index: 2; }
+.digital-hero .eyebrow { color: #d8e5eb; display: flex; gap: 12px; align-items: center; }
+.eyebrow > span { width: 7px; height: 7px; background: #f47845; border-radius: 50%; }
+.digital-hero h1 { font-size: clamp(43px, 5.5vw, 76px); line-height: 1.08; letter-spacing: -3px; font-weight: 650; margin: 0 0 26px; }
+.digital-hero h1 em { font-style: normal; color: #f7956d; }
+.hero-intro { max-width: 540px; font-size: 17px; line-height: 1.8; color: #c4d2df; }
+.hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 32px; flex-wrap: wrap; }
+.digital-btn { display: inline-flex; justify-content: center; align-items: center; gap: 24px; background: #f47845; color: #102330; padding: 16px 23px; border-radius: 4px; font-size: 14px; font-weight: 650; transition: background .2s, transform .2s; }
+.digital-btn:hover { background: #ff996d; color: #102330; transform: translateY(-2px); }
+.text-link { color: white; font-size: 14px; display: flex; gap: 20px; }
+.hero-note { background: #ffffff08; border: 1px solid #ffffff25; border-radius: 12px; padding: 32px; backdrop-filter: blur(10px); }
+.note-icon { font-size: 40px; color: #76c9c8; display: block; margin-bottom: 35px; }
+.hero-note > p { font-size: 10px; letter-spacing: 2px; color: #9fb9c9; }
+.hero-note h2 { font-size: 29px; line-height: 1.3; letter-spacing: -1px; margin-bottom: 18px; }
+.hero-note > span:last-of-type { font-size: 12px; color: #b4c6d5; }
+.hero-note a { display: flex; justify-content: space-between; padding-top: 25px; margin-top: 26px; border-top: 1px solid #ffffff25; color: white; font-size: 13px; }
+.hero-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid #ffffff25; padding: 26px 0; margin-top: 75px; color: #a9bdcc; font-size: 14px; line-height: 1.6; letter-spacing: 1.3px; }
+.hero-bottom div { display: flex; flex-wrap: wrap; gap: 16px 28px; letter-spacing: 0; font-size: 16px; }
+.about-visual { position: relative; padding-bottom: 25px; }
+.about-visual > img { width: 100%; height: 470px; object-fit: cover; border-radius: 7px; }
+.image-caption { position: absolute; right: 0; bottom: 0; background: #e8f1ed; color: #163d3b; padding: 25px 35px; display: flex; align-items: center; gap: 20px; border: 7px solid white; }
+.image-caption i { font-size: 32px; }
+.solution-detail-photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 60%; }
+.image-caption span { font-size: 14px; line-height: 1.7; }
+.lead-copy { font-size: 21px; color: #304c5a; }
+.digital-about p:not(.eyebrow), .why-section p { color: #61717c; line-height: 1.8; }
+.value-list { list-style: none; padding: 0; margin: 25px 0; }
+.value-list li { margin: 15px 0; display: flex; gap: 13px; align-items: center; }
+.value-list i { color: #277c77; font-size: 21px; }
+.inline-link { font-size: 14px; color: #183e4e; font-weight: 600; display: inline-flex; gap: 20px; border-bottom: 1px solid #aec2c8; padding-bottom: 8px; }
+.expertise-section { background: #f3f5f5; }
+.section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 35px; margin-bottom: 45px; }
+.section-heading .display-heading { margin-bottom: 0; }
+.section-heading > p { color: #647681; font-size: 14px; line-height: 1.8; margin-bottom: 4px; }
+.expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+.expertise-card { background: white; border: 1px solid #dfe6e8; border-radius: 5px; padding: 29px; }
+.card-topline { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+.card-topline i { font-size: 31px; color: #277c77; }
+.card-topline span { font-size: 11px; color: #89969d; }
+.expertise-card h3 { font-size: 20px; letter-spacing: -.6px; color: #173548; }
+.expertise-card > p { font-size: 14px; line-height: 1.8; color: #657884; min-height: 50px; }
+.expertise-card summary { list-style: none; display: flex; justify-content: space-between; cursor: pointer; padding: 18px 0 0; border-top: 1px solid #e8ecee; font-size: 12px; font-weight: 600; color: #173548; }
+.expertise-card summary::-webkit-details-marker { display: none; }
+.expertise-card details[open] summary i { transform: rotate(45deg); }
+.service-expansion { font-size: 13px; line-height: 1.8; padding-top: 18px; color: #657884; }
+.service-expansion a { color: #a84920; }
+.solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.solution-card { position: relative; padding: 32px; border: 1px solid #dce5e6; border-radius: 7px; color: #62747d; transition: border-color .2s, transform .2s; }
+.solution-card:hover { border-color: #277c77; transform: translateY(-4px); color: #62747d; }
+.solution-icon { width: 54px; height: 54px; display: grid; place-items: center; background: #eaf3f0; border-radius: 12px; color: #24665d; font-size: 25px; margin-bottom: 30px; }
+.solution-category { font-size: 9px; letter-spacing: 1.6px; color: #5d737d; }
+.solution-card h3 { margin-top: 12px; font-size: 22px; letter-spacing: -.7px; color: #142f40; }
+.solution-card p { font-size: 14px; line-height: 1.8; }
+.solution-link { display: flex; justify-content: space-between; margin-top: 26px; font-size: 12px; font-weight: 600; color: #1e514d; }
+.approach-section { background: #0d2434; }
+.approach-section .display-heading { color: #fff; }
+.approach-section .eyebrow { color: #f7956d; }
+.approach-section .section-heading > p { color: #b4c5d1; }
+.process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 35px; margin-top: 60px; }
+.process-grid article { border-top: 1px solid #ffffff30; padding-top: 25px; }
+.process-grid article > span { color: #f7956d; font-size: 13px; }
+.process-grid h3 { font-size: 23px; margin: 30px 0 16px; }
+.process-grid p { color: #b4c5d1; font-size: 14px; line-height: 1.8; }
+.reason { display: flex; gap: 25px; padding: 25px 0; border-bottom: 1px solid #e1e8e9; }
+.reason > span { color: #34847a; font-size: 12px; padding-top: 3px; }
+.reason h3 { font-size: 21px; color: #193849; }
+.reason p { margin-bottom: 0; font-size: 14px; }
+.digital-home .contact { background: #f3f5f5; }
+.contact .section-title h2 { color: #a84c25; }
+.contact .section-title p { color: #173548; font-size: clamp(26px, 3vw, 38px); text-transform: none; letter-spacing: -1px; }
+.contact .form-label { color: #375263; font-size: 12px; font-weight: 600; }
+.contact .php-email-form { box-shadow: none; border: 1px solid #dce5e6; border-radius: 5px; }
+.contact .info-item { box-shadow: none; background: white; border: 1px solid #dce5e6; border-radius: 5px; }
+.footer { background: #091c2b; }
+.solution-detail p { line-height: 1.9; color: #62747d; }
+@media (min-width: 1200px) { .navmenu a { font-size: 16px; text-transform: none; } }
+@media (max-width: 991px) { .digital-hero { padding-top: 145px; } .hero-note { max-width: 500px; } .digital-home .section { padding: 70px 0; } .expertise-grid, .solution-grid { grid-template-columns: repeat(2,1fr); } .process-grid { grid-template-columns: repeat(2,1fr); } .hero-bottom { margin-top: 45px; } .hero-bottom, .section-heading { flex-direction: column; align-items: flex-start; } }
+@media (max-width: 575px) { .digital-hero h1 { letter-spacing: -1.8px; } .hero-bottom div { flex-direction: column; gap: 12px; } .hero-bottom { padding: 25px 0; } .expertise-grid, .solution-grid, .process-grid { grid-template-columns: 1fr; } .about-visual > img { height: 340px; } .image-caption { padding: 18px; } .section-heading > p br { display: none; } .hero-actions { gap: 22px; } .header .cta-btn { padding: 8px 15px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+
+/* Company wordmark adapts to the longer Arcteon Digital name. */
+.header .logo h1 { font-size: 25px; letter-spacing: -1px; white-space: nowrap; }
+.contact .info-item p { overflow-wrap: anywhere; max-width: 100%; }
+@media (max-width: 575px) { .header .logo h1 { font-size: 19px; letter-spacing: -.6px; } .header .cta-btn { font-size: 11px; margin-left: 8px; padding: 7px 9px; } }
+
+/* Contact actions preserve the existing navy-and-orange design. */
+.address-link { border: 0; padding: 0; background: transparent; color: #254d60; font: inherit; line-height: 1.8; cursor: pointer; text-align: inherit; }
+.address-link:hover { color: #b34d22; }
+.address-link:focus-visible { outline: 3px solid #22b8bd; outline-offset: 5px; }
+.address-link > span { font-size: 12px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.footer .footer-address { color: inherit; text-align: left; }
+.footer .footer-address:hover { color: var(--accent-color); }
+.contact .info-item p { padding-inline: 14px; }
+.contact .career-contact { padding: 25px; text-align: center; }
+.career-contact .inline-link { margin-top: 12px; }
+.careers-section { background: #f3f5f5; }
+.careers-section p { line-height: 1.9; }
+#locationMap .modal-content { border-radius: 8px; }
+#locationMap .modal-body p { color: #536875; font-size: 14px; }
+@media (min-width: 1200px) { .navmenu > ul > li > a { padding-inline: 13px; } }
+
+.enquiry-tabs { display: flex; gap: 8px; padding: 7px; margin-bottom: 18px; background: #e5ebed; border-radius: 5px; }
+.enquiry-tabs .nav-link { flex: 1; color: #294655; font-size: 14px; font-weight: 600; padding: 12px 15px; border-radius: 3px; }
+.enquiry-tabs .nav-link.active { background: #173548; color: #fff; box-shadow: inset 0 -3px 0 #f47845; }
+.job-enquiry-intro { font-size: 14px; color: #61717c; line-height: 1.8; }
+
+/* Project branding supplied in the product reference, shown without redrawing logos. */
+.solution-card { overflow: hidden; }
+.product-brand-panel { display: grid; place-items: center; height: 136px; margin: -32px -32px 26px; background: rgba(255,255,255,.65); border-bottom: 1px solid #dce5e6; }
+.product-brand { display: block; width: 146px; height: 80px; background-image: url('../img/products/product-reference.png'); background-repeat: no-repeat; background-size: 549px 454px; }
+.product-workvibes { background-position: -34px -90px; }
+.product-klinik { background-position: -190px -90px; }
+.product-streamline { background-position: -344px -90px; }
+.product-tender { background-position: -34px -244px; }
+.product-rappovena { background-position: -190px -244px; }
+.product-queue { background-position: -344px -244px; }
+.product-detail-brand { margin: 20px 0; border: 1px solid #dce5e6; border-radius: 12px; }
+
+.footer .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; text-align: left; }
+.footer .footer-md-badge { flex-shrink: 0; padding: 8px 12px; background: #fff; border-radius: 4px; }
+.footer .footer-md-badge img { display: block; width: 68px; height: auto; }
+@media (max-width: 575px) {
+  .footer .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+
+/* Preserve the complete team in the supplied wide About image. */
+.about-team-visual { padding-bottom: 0; }
+.about-team-visual > img { display: block; width: 100%; height: auto; object-fit: contain; }
+.about-team-visual .image-caption { position: static; margin-top: 14px; padding: 16px 22px; }
+
+/* Product navigation alongside the existing solution details. */
+.product-sidebar-nav { padding: 25px; background: #f5f8f8; border: 1px solid #dce5e6; border-radius: 10px; }
+.product-sidebar-nav h2 { color: #173548; font-size: 20px; font-weight: 600; margin: 0 0 17px; padding-bottom: 17px; border-bottom: 1px solid #dce5e6; }
+.product-sidebar-nav ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }
+.product-sidebar-nav a { display: flex; align-items: center; gap: 12px; padding: 15px 14px; border-radius: 5px; color: #48616e; font-size: 14px; line-height: 1.5; background: #fff; }
+.product-sidebar-nav a i { color: #b34d22; flex-shrink: 0; font-size: 17px; }
+.product-sidebar-nav a:hover { color: #173548; background: #e8eeee; }
+.product-sidebar-nav a.active { color: #fff; background: #173548; font-weight: 600; }
+.product-sidebar-nav a.active i { color: #ff996d; }
+.product-sidebar-contact { margin-top: 24px; padding: 30px 22px; border-radius: 10px; background: #173548; text-align: center; }
+.product-sidebar-contact > i { display: block; color: #ff996d; font-size: 34px; margin-bottom: 13px; }
+.product-sidebar-contact h2 { color: #fff; font-size: 22px; margin-bottom: 12px; }
+.solution-detail .product-sidebar-contact p { color: #c6d6dc; font-size: 13px; line-height: 1.7; margin-bottom: 17px; }
+.product-sidebar-contact a { display: block; color: #ffb18b; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+.product-sidebar-contact a + a { margin-top: 9px; }
+.product-sidebar-contact a:hover { color: #fff; text-decoration: underline; }
+.product-detail-main-photo { display: block; width: 100%; height: auto; max-height: 470px; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 45%; }
+@media (min-width: 992px) { .product-detail-sidebar { position: sticky; top: 110px; } }
+@media (max-width: 575px) { .product-sidebar-nav { padding: 20px; } .product-sidebar-nav a { padding: 13px; } }
+
+/* A subtle workplace banner supports, rather than displaces, the product details. */
+.product-details-refined .page-title { padding: 130px 0 36px; background-position: center 42%; }
+.product-details-refined .page-title::before { background: linear-gradient(100deg, rgba(5,22,33,.9), rgba(5,22,33,.77)); }
+.product-details-refined .page-title .eyebrow { color: #ffb18b; margin-bottom: 15px; font-size: 10px; }
+.product-banner-brand { display: flex; justify-content: center; align-items: center; gap: 17px; margin-bottom: 14px; }
+.product-banner-logo { width: 117px; height: 64px; flex-shrink: 0; background-size: 439.2px 363.2px; background-color: #fff; border-radius: 4px; }
+.product-banner-logo.product-workvibes { width: 50px; background-size: 549px 454px; background-position: -82px -97px; }
+.product-banner-logo.product-klinik { background-position: -152px -72px; }
+.product-banner-logo.product-streamline { background-position: -275.2px -72px; }
+.product-banner-logo.product-tender { background-position: -27.2px -195.2px; }
+.product-banner-logo.product-rappovena { background-position: -152px -195.2px; }
+.product-banner-logo.product-queue { background-position: -275.2px -195.2px; }
+.product-banner-brand h1 { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.product-details-refined .page-title .container > p:not(.eyebrow) { font-size: 14px; color: #e2ebef; margin-bottom: 15px; }
+.product-details-refined .page-title .breadcrumbs ol { font-size: 13px; }
+.product-details-refined .solution-detail { padding-block: 48px; }
+.product-details-refined .product-detail-content > .eyebrow { margin-bottom: 12px; }
+.product-content-title { margin: 0 0 14px; color: #173548; font-size: clamp(25px, 2.5vw, 32px); font-weight: 650; line-height: 1.25; letter-spacing: -.7px; }
+.solution-detail .product-content-intro { max-width: 620px; margin-bottom: 25px; font-size: 15px; line-height: 1.8; }
+.product-feature-list { margin: 0 0 25px; }
+.product-feature-list > div { padding: 19px 0; border-bottom: 1px solid #dce5e6; }
+.product-feature-list > div:first-child { border-top: 1px solid #dce5e6; }
+.product-feature-list dt { display: flex; gap: 12px; align-items: center; color: #173548; font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.product-feature-list dt i { color: #297d78; font-size: 21px; }
+.product-feature-list dd { margin: 0 0 0 33px; color: #62747d; font-size: 14px; line-height: 1.8; max-width: 590px; }
+.solution-detail .product-enquiry > p:first-child { font-size: 14px; margin-bottom: 18px; }
+.solution-detail .product-enquiry .product-scope-note { color: #71828c; font-size: 12px; line-height: 1.7; margin: 12px 0 0; }
+.product-sidebar-toggle { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0; background: transparent; border: 0; color: inherit; font: inherit; text-align: left; }
+.product-sidebar-toggle i { font-size: 14px; transition: transform .2s; }
+.product-sidebar-toggle[aria-expanded=true] i { transform: rotate(180deg); }
+@media (max-width: 991px) {
+  .product-sidebar-nav h2 { margin: 0; padding: 0; border: 0; font-size: 16px; }
+  #product-sidebar-links ul { padding-top: 18px; }
+  .product-detail-sidebar .product-sidebar-contact { display: none; }
+  .product-details-refined .solution-detail .row { --bs-gutter-y: 1.75rem; }
+}
+@media (max-width: 575px) {
+  .product-details-refined .page-title { padding: 120px 0 28px; }
+  .product-banner-brand { gap: 13px; }
+  .product-banner-brand h1 { font-size: clamp(23px, 6vw, 34px); text-align: left; }
+  .product-details-refined .page-title .eyebrow { font-size: 9px; letter-spacing: 1.5px; }
+  .product-details-refined .solution-detail { padding-block: 28px; }
+}
+
+.product-enquiry .digital-btn { max-width: 100%; }
+
+.product-brochure { padding: 0; margin: 30px 0; }
+.product-brochure-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 15px; }
+.product-brochure-heading h2 { color: #173548; font-size: 22px; font-weight: 600; margin: 0; }
+.product-brochure-download { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 600; }
+.product-brochure-preview { display: block; overflow: hidden; border: 1px solid #dce5e6; border-radius: 10px; background: #fff; cursor: zoom-in; }
+.product-brochure-preview img { display: block; width: 100%; height: auto; }
+.solution-detail .product-brochure-caption { color: #62747d; font-size: 12px; line-height: 1.7; margin: 10px 0 0; }

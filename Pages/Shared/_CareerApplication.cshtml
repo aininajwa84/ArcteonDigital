@@ -1,0 +1,25 @@
+<div class="modal fade" id="careerApplication" tabindex="-1" aria-labelledby="careerApplicationTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
+        <div class="modal-header"><div><p class="eyebrow">CAREER APPLICATION</p><h2 class="modal-title" id="careerApplicationTitle">General Interest</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close application"></button></div>
+        <div class="modal-body contact">
+            <p id="application-role-context" class="application-role-context"></p>
+            @* <p class="application-intro">This is a recruitment preview. Your submission is saved locally; it is not emailed to HR.</p> *@
+            <form action="/forms/applications" method="post" enctype="multipart/form-data" class="php-email-form" id="career-application-form">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="role" id="application-role" value="General Interest">
+                <div class="row gy-3">
+                    <div class="col-sm-6"><label for="application-name" class="form-label">Full name *</label><input id="application-name" class="form-control" name="name" autocomplete="name" maxlength="200" required></div>
+                    <div class="col-sm-6"><label for="application-email" class="form-label">Email address *</label><input id="application-email" class="form-control" type="email" name="email" autocomplete="email" maxlength="254" required></div>
+                    <div class="col-sm-6"><label for="application-phone" class="form-label">Phone number *</label><input id="application-phone" class="form-control" type="tel" name="phone" autocomplete="tel" maxlength="40" required></div>
+                    <div class="col-sm-6"><label for="application-interest" class="form-label">Interested in *</label><select id="application-interest" class="form-select" name="interest" required><option>Internship</option><option>Full-time</option><option>General Interest</option></select></div>
+                    <div class="col-sm-6"><label for="application-university" class="form-label">University / organization (optional)</label><input id="application-university" class="form-control" name="organization" maxlength="200"></div>
+                    <div class="col-sm-6"><label for="application-date" class="form-label">Available start date (optional)</label><input id="application-date" class="form-control" type="date" name="startDate"></div>
+                    <div class="col-12"><label for="application-resume" class="form-label">Résumé / CV * <small>PDF, DOC, DOCX · maximum 5 MB</small></label><input id="application-resume" class="form-control" type="file" name="resume" accept=".pdf,.doc,.docx" aria-describedby="resume-guidance" required><small id="resume-guidance">Upload your résumé only; avoid identity documents or other sensitive records.</small></div>
+                    <div class="col-12"><label for="application-message" class="form-label">Cover note (optional)</label><textarea id="application-message" class="form-control" name="message" rows="3" maxlength="10000" placeholder="Tell us about your background and interests"></textarea></div>
+                    <div class="col-12"><label class="application-confirm"><input type="checkbox" name="consent" value="true" required> <span>I understand this is a preview and agree to save my application locally for review.</span></label></div>
+                    <div class="col-12"><div class="loading" role="status">Saving your application…</div><div class="error-message" role="alert"></div><div class="sent-message" role="status">Your application and résumé have been saved locally. No email has been sent.</div><button type="submit">Save Application <i class="bi bi-arrow-up-right" aria-hidden="true"></i></button></div>
+                </div>
+            </form>
+        </div>
+    </div></div>
+</div>

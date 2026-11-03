@@ -1,0 +1,12 @@
+SEP BROCHURE SET
+
+Eight three-panel brochure spreads inspired by the supplied ByondQ brochure.
+Includes all six core SEP modules, a platform overview, and full device deployment workflows.
+All 22 source slides are covered. Features, benefits and workflow steps are preserved.
+
+The combined PDF contains all eight spreads. Individual PDFs are vector-text versions for sharing and printing.
+PNG images are 2400 x 1600 pixels. These are digital brochure spreads; a printer should prepare fold order,
+bleed and any required production settings before physical tri-fold printing.
+
+Source: Arcteon Digital-SEP.pptx supplied by the user.
+Reference visual style: ByondQ - Smart Queue Banking Brochure.png supplied by the user.

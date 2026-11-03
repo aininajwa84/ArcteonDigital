@@ -1,0 +1,31 @@
+@{
+    var roles = new[] {
+        new { Title = "Software Developer Intern", Kind = "internship", Label = "Internship", Icon = "bi-code-slash", Team = "Software Development", Mode = "On-site", Intro = "Turn what you’re learning into software that people can use.", Tags = new[] { "Web applications", "Testing", "Problem solving" }, Tasks = new[] { "Contribute to web and application features.", "Test changes and document what you learn.", "Collaborate on practical development tasks." }, Fit = "For students or early-career developers with basic programming skills and a willingness to learn." },
+        new { Title = "AI & Automation Intern", Kind = "internship", Label = "Internship", Icon = "bi-cpu", Team = "AI & Automation", Mode = "On-site", Intro = "Explore how AI can make everyday work simpler and smarter.", Tags = new[] { "Applied AI", "Automation", "Data workflows" }, Tasks = new[] { "Explore useful AI and automation use cases.", "Prototype workflows and evaluate their outputs.", "Document findings and support technical experiments." }, Fit = "For curious learners interested in AI, scripting and practical business workflows." },
+        new { Title = "Software Engineer", Kind = "full-time", Label = "Full-time", Icon = "bi-braces", Team = "Software Development", Mode = "Hybrid", Intro = "Build thoughtful business software, from the first idea to the final detail.", Tags = new[] { "Custom software", "Integration", "Quality" }, Tasks = new[] { "Design and implement business application features.", "Connect systems and maintain reliable integrations.", "Review, test and improve application quality." }, Fit = "For developers comfortable building and maintaining applications and discussing technical decisions." }
+    };
+}
+<section id="careers" class="section careers-section careers-enhanced">
+    <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">CAREERS &amp; INTERNSHIPS</p><h2 class="display-heading">Your next chapter.<br>Built with us.</h2></div><p>Explore AI, software and the possibilities in between.<br>Find an area that fits your curiosity and skills.</p></div>
+        <div class="career-paths"><div><i class="bi bi-mortarboard" aria-hidden="true"></i><span><strong>Starting your career?</strong><small>Explore internship pathways.</small></span></div><div><i class="bi bi-code-square" aria-hidden="true"></i><span><strong>Ready for your next challenge?</strong><small>Discover software development roles.</small></span></div><a href="#career-opportunities">Find your direction <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a></div>
+        @* <div class="careers-notice"><div><strong>Explore our recruitment experience</strong><p>These roles and role details are samples, not confirmed vacancies. Applications in this preview are saved locally.</p></div><span>RECRUITMENT PREVIEW</span></div> *@
+        <div id="career-opportunities" class="opportunity-toolbar"><div><h3>Explore opportunities</h3><p id="career-filter-status" role="status">Showing 3 sample opportunities</p></div><div class="career-search"><label class="visually-hidden" for="career-search">Search roles or skills</label><i class="bi bi-search" aria-hidden="true"></i><input id="career-search" type="search" placeholder="Search roles or skills" autocomplete="off"></div></div>
+        <div class="career-filters" role="group" aria-label="Filter opportunities"><button type="button" class="active" data-career-filter="all" aria-pressed="true">All opportunities <span>3</span></button><button type="button" data-career-filter="internship" aria-pressed="false">Internships <span>2</span></button><button type="button" data-career-filter="full-time" aria-pressed="false">Full-time <span>1</span></button></div>
+        <div class="opportunity-grid">
+        @foreach (var role in roles)
+        {
+            <article class="opportunity-card" data-career-kind="@role.Kind">
+                <div class="opportunity-top"><span>@role.Label</span><small>Sample role</small></div>
+                
+                <h3>@role.Title</h3><p class="career-role-intro">@role.Intro</p>
+                <div class="career-location"><span><i class="bi bi-geo-alt" aria-hidden="true"></i> Kuala Lumpur</span><span><i class="bi bi-building" aria-hidden="true"></i> @role.Mode</span></div>
+                <button type="button" class="apply-link" data-bs-toggle="modal" data-bs-target="#careerApplication" data-role="@role.Title" data-interest="@role.Label" data-description="@role.Intro">Apply for this role <i class="bi bi-arrow-up-right" aria-hidden="true"></i></button>
+            </article>
+        }
+        </div>
+        <div id="career-empty" class="career-empty" hidden><i class="bi bi-search" aria-hidden="true"></i><h3>No matching roles</h3><p>Try another keyword or explore all opportunities.</p><button type="button" id="career-reset">Clear search &amp; filters</button></div>
+        <div class="career-general"><div><p class="eyebrow">THERE’S MORE THAN ONE WAY TO START</p><h3>Don’t see your role? Introduce yourself.</h3><p>Tell us what you enjoy building, the skills you bring and where you’d like to grow.</p></div><button type="button" class="digital-btn" data-bs-toggle="modal" data-bs-target="#careerApplication" data-role="General Interest" data-interest="General Interest">Submit General Interest <i class="bi bi-arrow-up-right" aria-hidden="true"></i></button></div>
+        <div class="career-preparation"><i class="bi bi-file-earmark-person" aria-hidden="true"></i><p><strong>A little preparation goes a long way.</strong> Have your résumé ready (PDF, DOC or DOCX, up to 5 MB). Share a short note about your interests and availability in the application.</p></div>
+    </div>
+</section>
