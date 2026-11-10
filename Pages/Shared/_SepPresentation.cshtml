@@ -1,10 +1,10 @@
 @model IReadOnlyList<Dewi.Pages.SepBrochure>
-<section class="sep-presentation" aria-labelledby="sep-presentation-title" data-sep-presentation>
+<section id="product-brochures" class="sep-presentation" aria-labelledby="sep-presentation-title" data-sep-presentation>
     <div class="sep-presentation-heading">
         <div><p class="eyebrow">EXPLORE SEP</p><h2 id="sep-presentation-title">Explore the SEP brochures</h2></div>
         <span class="sep-deck-label"><i class="bi bi-journals" aria-hidden="true"></i> @Model.Count brochures</span>
     </div>
-    <p class="sep-presentation-intro">Browse all six modules and the complete deployment workflow. These eight brochure spreads cover the full SEP presentation, with individual and complete PDF downloads.</p>
+    <p class="sep-presentation-intro">Browse the platform overview, all six modules and the deployment workflow. Download an individual brochure or the complete set as a PDF.</p>
     <div class="sep-topic-links" aria-label="Brochure topics">
         @for (var index = 0; index < Model.Count; index++)
         {

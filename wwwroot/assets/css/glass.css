@@ -297,20 +297,28 @@
 @supports not (backdrop-filter: blur(1px)) { .expertise-section .expertise-card { background: #f8fbfb; } }
 @media (max-width: 575px) { .expertise-section .service-watermark { font-size: 112px; } }
 
-/* Footer wordmark uses its own class to avoid template logo height limits. */
-.footer .footer-brand { display: block; width: 320px; max-width: 100%; margin: -12px 0 14px; }
-.footer .footer-brand img { display: block; width: 100%; height: auto; aspect-ratio: 2103 / 748; object-fit: contain; max-width: 100%; max-height: none; }
-.footer .footer-top { padding-top: 45px; }
+.footer .footer-brand { display: block; width: 360px; max-width: 100%; margin-bottom: 16px; }
+.footer .footer-brand img { display: block; width: 100%; height: auto; }
+.footer .footer-top { padding-top: clamp(24px, 4vw, 45px); }
 .footer .footer-top .footer-links { padding-top: 5px; }
-.footer .footer-contact p { line-height: 1.8; }
-.footer .footer-bottom { padding-block: 24px; gap: 24px; }
-.footer .footer-bottom-copy { min-width: 0; }
-.footer .footer-md-badge { flex-shrink: 0; padding: 10px 14px; border-radius: 5px; }
-.footer .footer-md-badge img { display: block; width: 68px; height: auto; }
+.footer .footer-links ul a { line-height: 1.4; }
+.footer .footer-contact p { line-height: 1.8; overflow-wrap: anywhere; }
+.footer .footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 20px calc(var(--bs-gutter-x, 1.5rem) / 2) 24px;
+  text-align: left;
+}
+.footer .footer-ownership { min-width: 0; }
+.footer .footer-bottom .credits { margin-top: 0; font-size: 12px; color: rgba(255, 255, 255, 0.6); }
+.footer .footer-md-badge { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; color: rgba(255, 255, 255, 0.6); font-size: 14px; font-weight: 500; }
+.footer .footer-md-badge img { display: block; width: auto; height: 40px; filter: brightness(0) invert(1); }
 .footer .social-links a { transition: color .2s, border-color .2s, transform .2s; }
 .footer .social-links a:hover { transform: translateY(-3px); }
 @media (max-width: 991px) { .footer .footer-top .footer-links { padding-top: 0; } }
-@media (max-width: 575px) { .footer .footer-brand { width: 280px; } .footer .footer-bottom { align-items: flex-start; text-align: left; gap: 18px; } }
 
 @media (prefers-reduced-motion: no-preference) {
   .expertise-section .expertise-card, .products-enhanced .solution-card { transition: transform .25s, box-shadow .25s, border-color .25s; }
@@ -351,8 +359,6 @@
 /* Original pixel artwork with transparent backgrounds and tight, even margins. */
 .header .header-brand { width: 280px; max-width: calc(100vw - 90px); flex-shrink: 0; }
 .header .header-brand img { display: block; width: 100%; height: auto; }
-.footer .footer-brand { width: 400px; max-width: 100%; margin-top: 0; }
-.footer .footer-brand img { aspect-ratio: auto; height: auto; }
 .products-enhanced .product-brand-panel.has-standalone-logo { height: 130px; background: transparent; }
 .product-logo-image { display: block; object-fit: contain; object-position: center; background: transparent; max-width: calc(100% - 24px); }
 .product-logo-image.product-logo-hr { width: 88px; height: 88px; }
@@ -361,7 +367,7 @@
 .product-logo-image.product-logo-queue { width: 140px; height: 70px; }
 .product-logo-image.product-logo-nexus { width: 190px; height: 100px; }
 .product-banner-image { flex-shrink: 0; max-width: 38%; }
-.product-banner-image.product-logo-assets { width: 230px; height: 170px; }
+.product-banner-image.product-logo-assets { width: 185px; height: 137px; }
 /* Match optical weight instead of enlarging every logo to the same width. */
 .products-enhanced .product-brand-panel.has-standalone-logo { height: 140px; background: #f7fafb80; }
 .products-enhanced .product-logo-image.product-logo-hr { width: 90px; height: 90px; }
@@ -380,10 +386,10 @@
 @media (max-width: 1199px) { .header .header-brand { width: 240px; } }
 @media (max-width: 575px) {
   .header .header-brand { width: 220px; }
-  .footer .footer-brand { width: 320px; }
+  .footer .footer-brand { width: 288px; }
   .product-banner-image.product-logo-hr { width: 76px; height: 76px; }
   .product-banner-image.product-logo-clinic { height: 85px; }
-  .product-banner-image.product-logo-assets { width: 150px; height: 112px; }
+  .product-banner-image.product-logo-assets { width: 122px; height: 91px; }
   .products-enhanced .solution-card h3 { min-height: 0; }
 }
 

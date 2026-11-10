@@ -8,7 +8,7 @@ public record ProductDetailContent(string Heading, string Enquiry, string[] Feat
 public class ServiceDetailsModel : PageModel
 {
     public BusinessSolution? Solution { get; private set; }
-    public bool HasNexusPresentation => Solution?.Key == "nexus";
+    public bool HasNexusBrochure => Solution?.Key == "nexus";
     public (string File, string Title)? Brochure => Solution?.Key switch
     {
         "clinic" => ("arcteonmed-brochure.jpeg", "ArcteonMed Clinic Management System"),
