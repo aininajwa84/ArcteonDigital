@@ -1,7 +1,4 @@
-.sep-presentation { margin: 0 0 42px; min-width: 0; background-color: transparent; }
-.sep-presentation-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.sep-presentation-heading .eyebrow { margin-bottom: 8px; }
-.sep-presentation-heading h2 { color: #173548; font-size: clamp(25px, 3vw, 34px); letter-spacing: -1px; margin: 0; }
+.sep-presentation { min-width: 0; }
 .sep-deck-label { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border: 1px solid #d8e3e8; border-radius: 20px; color: #426170; font-size: 12px; white-space: nowrap; }
 .sep-presentation .sep-presentation-intro { margin: 16px 0; font-size: 14px; line-height: 1.75; }
 .sep-topic-links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }

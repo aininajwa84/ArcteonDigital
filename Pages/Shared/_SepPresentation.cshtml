@@ -11,15 +11,9 @@
     var completePdf = Url.Content(Model.Pdf);
     var firstPdf = Model.IsBrochureSet ? Url.Content($"{Model.Directory}/{first.File}.pdf") : $"{completePdf}#page=1";
 }
-<section id="@(Model.IsBrochureSet ? "product-brochures" : "product-presentation")" class="sep-presentation @(Model.IsBrochureSet ? "" : "sep-presentation--widescreen")" aria-labelledby="sep-presentation-title" data-sep-presentation data-item-label="@item">
-    <div class="sep-presentation-heading">
-        <div>
-            @if (Model.IsBrochureSet)
-            {
-                <p class="eyebrow">EXPLORE SEP</p>
-            }
-            <h2 id="sep-presentation-title">@Model.Heading</h2>
-        </div>
+<section id="@(Model.IsBrochureSet ? "product-brochures" : "product-presentation")" class="product-brochure sep-presentation @(Model.IsBrochureSet ? "" : "sep-presentation--widescreen")" aria-labelledby="sep-presentation-title" data-sep-presentation data-item-label="@item">
+    <div class="product-brochure-heading">
+        <h2 id="sep-presentation-title">@Model.Heading</h2>
         <span class="sep-deck-label"><i class="bi bi-journals" aria-hidden="true"></i> @slides.Count @(Model.IsBrochureSet ? "brochures" : "slides")</span>
     </div>
     <p class="sep-presentation-intro">@Model.Description</p>

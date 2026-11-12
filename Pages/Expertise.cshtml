@@ -54,6 +54,20 @@
                     <div><dt><i class="bi bi-check2-circle" aria-hidden="true"></i>@area.Title</dt><dd>@area.Description</dd></div>
                 }
                 </dl>
+                @if (current.Key == "artificial-intelligence")
+                {
+                    var brochureUrl = Url.Content("~/assets/brochures/ad-ai-brochure.jpg");
+                    <section class="product-brochure" aria-labelledby="ad-ai-brochure-title">
+                        <div class="product-brochure-heading">
+                            <h3 id="ad-ai-brochure-title">Product brochure</h3>
+                        </div>
+                        <p>See how AD.AI helps audit teams analyse data, find information and prepare reports.</p>
+                        <a href="@brochureUrl" class="product-brochure-preview glightbox" target="_blank" rel="noopener" aria-label="Enlarge the AD.AI brochure">
+                            <img src="@brochureUrl" alt="AD.AI brochure showing the solution overview, how it works and key benefits" width="1264" height="842" loading="lazy" asp-append-version="true">
+                        </a>
+                        <partial name="_BrochureActions" model="(brochureUrl, (string?)null)" />
+                    </section>
+                }
                 <div class="product-enquiry">
                     <p>Tell us what you want to improve. We’ll work with you to clarify requirements, review your current systems and agree on a practical next step.</p>
                     <a href="/#contact-project" class="digital-btn">Discuss your project <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>

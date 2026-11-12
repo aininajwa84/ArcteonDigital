@@ -21,7 +21,7 @@ public static class SepPresentation
     ];
 
     public static ProductPresentation Viewer { get; } = new(
-        "SEP brochures", "Explore the SEP brochures",
+        "SEP brochures", "Product brochure",
         "Browse the platform overview, all six modules and the deployment workflow. Download an individual brochure or the complete set as a PDF.",
         "~/assets/brochures/sep", "~/assets/brochures/sep/SEP-Complete-Module-Brochures.pdf", Brochures, IsBrochureSet: true);
 }
