@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <filter id="byondq" color-interpolation-filters="sRGB">
+    <!-- Make neutral lettering white while retaining the orange accents. -->
+    <feColorMatrix type="matrix" values="
+       0     0  0     0  1
+      -0.52  0  0.52  0  1
+      -0.94  0  0.94  0  1
+       0     0  0     1  0"/>
+  </filter>
+  <filter id="arcteonmed" color-interpolation-filters="sRGB">
+    <!-- Map the darker lettering to warm white and the lighter A to sky blue. -->
+    <feColorMatrix type="matrix" values="
+      -1.144  0  0  0  1.428
+      -0.587  0  0  0  1.206
+      -0.010  0  0  0  0.957
+       0     0     0     1  0"/>
+  </filter>
+</svg>

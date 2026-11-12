@@ -1,0 +1,9 @@
+@model (string DocumentUrl, string? CompleteSetUrl)
+<div class="product-brochure-actions">
+    <a href="@Model.DocumentUrl" class="product-brochure-document" target="_blank" rel="noopener">View full-size brochure <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+    <a href="@Model.DocumentUrl" class="product-brochure-document" download>Download brochure <i class="bi bi-download" aria-hidden="true"></i></a>
+    @if (Model.CompleteSetUrl is { } completeSetUrl)
+    {
+        <a href="@completeSetUrl" download>Download all brochures <i class="bi bi-download" aria-hidden="true"></i></a>
+    }
+</div>

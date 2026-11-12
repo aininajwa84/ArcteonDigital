@@ -5,14 +5,17 @@ namespace Dewi.Pages;
 
 public record ProductDetailContent(string Heading, string Enquiry, string[] FeatureDescriptions);
 
+public record ProductBrochure(string Preview, string Title, int Width = 1536, int Height = 1024, string? Pdf = null);
+
 public class ServiceDetailsModel : PageModel
 {
     public BusinessSolution? Solution { get; private set; }
     public bool HasNexusBrochure => Solution?.Key == "nexus";
-    public (string File, string Title)? Brochure => Solution?.Key switch
+    public ProductBrochure? Brochure => Solution?.Key switch
     {
-        "clinic" => ("arcteonmed-brochure.jpeg", "ArcteonMed Clinic Management System"),
-        "queue" => ("byondq-smart-queue-brochure.png", "ByondQ Smart Queue Management System"),
+        "hr" => new("workvibes/workvibes-brochure.webp", "WorkVibes mobile app and web portal", 1800, 1193, "workvibes/workvibes-brochure.pdf"),
+        "clinic" => new("arcteonmed-brochure.jpeg", "ArcteonMed Clinic Management System"),
+        "queue" => new("byondq-smart-queue-brochure.png", "ByondQ Smart Queue Management System"),
         _ => null
     };
     public IReadOnlyList<BusinessSolution> Products => IndexModel.Catalogue.Where(item => !item.IsClientSolution).ToArray();

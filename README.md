@@ -13,13 +13,19 @@ You can also run `dotnet run --project Dewi.csproj` in this folder.
 
 - Pages: all four original pages converted to .cshtml Razor pages with C# PageModel files.
 - Pages/Shared/_Layout.cshtml: shared navigation, footer, styles and scripts.
-- Pages/Forms: C# replacement for both PHP handlers, with server validation and antiforgery protection.
+- Email: contact and career form handlers, server validation, and SMTP delivery.
 - wwwroot/assets: original CSS, JavaScript, fonts and images, preserved in their browser formats.
 - Properties/launchSettings.json: Visual Studio localhost launch profile.
 
 Routes: /, /portfolio-details, /service-details, /starter-page.
 
-Contact and newsletter submissions are saved as individual JSON files in App_Data/contact and App_Data/newsletter. These folders are outside the public web root. This is a local demo: no email is sent and no mailing-list service is connected. Configure an email/newsletter provider before using those features in production. Do not commit personal submissions.
+## SMTP setup
+
+The contact form emails `enquiry@arcteondigital.com.my`. Career applications and their résumé attachments go to `jabkitol.jabar@arcteondigital.com`. Replies go to the address entered by the visitor.
+
+Set `Smtp__Host`, `Smtp__FromAddress`, `Smtp__Username` and `Smtp__Password` in the hosting environment. Use a sender address authorised by the provider. Keep the password in the hosting secret store. For a relay that does not require a login, leave both username and password unset.
+
+The defaults are `Smtp__Port=587` and `Smtp__Security=StartTls`. For a provider that uses implicit TLS, set `Smtp__Port=465` and `Smtp__Security=SslOnConnect`. The website reports delivery as unavailable until the SMTP settings are configured.
 
 Google Fonts, map embeds and video links still require internet access. BootstrapMade template attribution and original licensing comments are retained; see Readme.txt.
 
@@ -37,24 +43,17 @@ Arcteon Digital focuses on AI, Software Customization and Consultation. These th
 
 ## Contact and job enquiries
 
-- /careers: general job enquiry form with name, email, role/interest, optional portfolio URL and message. It does not advertise current vacancies.
-- Job enquiries are validated in C# and saved under App_Data/careers. They are not emailed; connect a delivery provider before going live.
+- `/careers` opens the homepage careers section, where visitors can submit an application.
 - Clicking the address in the contact section or footer opens a Bootstrap map dialog. The directions button opens Google Maps in a new tab. Map rendering requires internet access.
 - Telephone links open a dialer; email links open an email draft. Neither sends a message automatically.
 - Working hours: Monday–Friday, 9.00 am–6.00 pm.
-
-The homepage Contact section includes Project Enquiry and Job Enquiry tabs. Navigation and contact-card job links open /#contact-job directly. Both the Contact tab and /careers use the same shared job form and C# submission handler.
 
 ## Glass styling
 
 The original navy/orange layout now uses glass.css for translucent cards, blurred navigation, subtle tinted backgrounds and frosted forms. Direct job-enquiry links scroll to the enquiry tabs, including on mobile. Static styles and scripts use versioned URLs to refresh browser caches.
 
-The Contact enquiry tabs have been replaced by an Enquiry Type dropdown (Project Enquiry / Job Enquiry). Selecting an option switches the form and disables hidden fields. The URL reflects the selected type; /#contact-job still opens the job form directly. Both submission paths were checked in the running site.
-
-Job enquiries are now available only through the homepage Contact dropdown. The separate menu/footer links and careers promotion card were removed; /careers redirects to the Contact job enquiry option. Submissions continue to be saved locally, with no email delivery configured.
-
 ## Careers & internships preview
 
 The homepage Careers section includes three explicitly labeled sample roles, internship/full-time filters and a general-interest action. Applications open in a responsive popup with name, email, phone, interest, organization, availability, résumé and optional cover note. These roles are examples, not confirmed vacancies.
 
-Applications POST to /forms/applications with antiforgery protection. Required fields, allowed roles, consent, file extension, signature and 5 MB résumé size are validated server-side. Files receive generated names and are stored with application JSON under App_Data/applications outside wwwroot. No email is sent. Connect HR delivery, replace the sample roles and add your actual recruitment/privacy terms before production use. File signature checks are basic format checks, not antivirus scanning.
+Applications post to `/forms/applications` with antiforgery protection. Applicants can attach one required résumé and up to three optional supporting documents. Each file must be PDF, DOC or DOCX and at most 5 MB, with a combined limit of 15 MB. The server validates the application and sends its attachments in one email to HR. The contact form posts to `/forms/contact` with the same antiforgery protection.

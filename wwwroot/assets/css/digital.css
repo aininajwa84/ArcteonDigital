@@ -203,11 +203,17 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px soli
 }
 
 .product-enquiry .digital-btn { max-width: 100%; }
+.service-example { margin: 0 0 24px; padding: 16px 20px; border-left: 3px solid #277c77; border-radius: 0 8px 8px 0; background: #e8f1f1; }
+.service-example h3 { margin: 0 0 6px; color: #173548; font-size: 16px; font-weight: 700; }
+.service-example p { margin: 0; }
 
-.product-brochure { padding: 0; margin: 30px 0; }
+.product-brochure { padding: 0; margin: 30px 0; background-color: transparent; }
 .product-brochure-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 15px; }
 .product-brochure-heading h2 { color: #173548; font-size: 22px; font-weight: 600; margin: 0; }
-.product-brochure-download { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 600; }
+.product-brochure-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.product-brochure-actions a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1px solid #bccdd7; border-radius: 7px; background: #fff; color: #173548; font-size: 13px; font-weight: 600; }
+.product-brochure-actions a:hover { border-color: #ad4827; color: #963a1c; }
+.product-brochure-actions a:focus-visible { outline: 2px solid #173548; outline-offset: 2px; }
 .product-brochure-preview { display: block; overflow: hidden; border: 1px solid #dce5e6; border-radius: 10px; background: #fff; cursor: zoom-in; }
 .product-brochure-preview img { display: block; width: 100%; height: auto; }
 .solution-detail .product-brochure-caption { color: #62747d; font-size: 12px; line-height: 1.7; margin: 10px 0 0; }

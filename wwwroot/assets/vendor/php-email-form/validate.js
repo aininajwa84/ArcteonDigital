@@ -50,16 +50,25 @@
   });
 
   function php_email_form_submit(thisForm, action, formData) {
+    const submit = thisForm.querySelector('[type="submit"]');
+    if (submit?.disabled) return;
+    if (submit) submit.disabled = true;
     fetch(action, {
       method: 'POST',
       body: formData,
       headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
-    .then(response => {
+    .then(async response => {
       if( response.ok ) {
         return response.text();
       } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
+        if (response.status === 429) throw new Error('Too many submissions. Please wait a minute and try again.');
+        if (response.headers.get('content-type')?.startsWith('text/plain')) {
+          const message = await response.text();
+          if (message) throw new Error(message);
+        }
+        if (response.status === 413) throw new Error('The submission is too large.');
+        throw new Error('The form could not be submitted. Please try again.');
       }
     })
     .then(data => {
@@ -72,7 +81,10 @@
       }
     })
     .catch((error) => {
-      displayError(thisForm, error);
+      displayError(thisForm, error.message);
+    })
+    .finally(() => {
+      if (submit) submit.disabled = false;
     });
   }
 

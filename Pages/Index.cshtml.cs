@@ -18,7 +18,7 @@ public record BusinessSolution(string Key, string Icon, string Category, string 
     public string LogoAlt => Key == "clinic" ? "ArcteonMed logo" : $"{Title} logo";
     public string? BannerLogoFile => Key switch
     {
-        "queue" => "byondq-logo-light.png",
+        "queue" => "byondq-banner-source.png",
         "nexus" => "arcteon-nexus-wordmark-light.svg",
         _ => LogoFile
     };

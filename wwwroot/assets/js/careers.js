@@ -34,6 +34,29 @@
   const modal = document.getElementById('careerApplication');
   if (!modal) return;
   const form = document.getElementById('career-application-form');
+  const interestField = document.getElementById('application-interest');
+  const interestOptions = document.getElementById('application-interest-options');
+  const generalInterest = document.getElementById('application-general-interest');
+  const internshipDates = document.getElementById('internship-dates');
+  const startDate = document.getElementById('application-date');
+  const endDate = document.getElementById('application-end-date');
+
+  function updateInternshipDates() {
+    const isInternship = !interestField.disabled && interestField.value === 'Internship';
+    internshipDates.hidden = internshipDates.disabled = !isInternship;
+    endDate.min = startDate.value;
+  }
+
+  interestField.addEventListener('change', updateInternshipDates);
+  startDate.addEventListener('input', updateInternshipDates);
+  const resume = document.getElementById('application-resume');
+  const supportingDocuments = document.getElementById('application-supporting-documents');
+  const maxFileBytes = 5 * 1024 * 1024;
+  form.addEventListener('reset', () => {
+    resume.setCustomValidity('');
+    supportingDocuments.setCustomValidity('');
+    queueMicrotask(updateInternshipDates);
+  });
   modal.addEventListener('show.bs.modal', event => {
     const role = event.relatedTarget?.dataset.role || 'General Interest';
     const interest = event.relatedTarget?.dataset.interest || 'General Interest';
@@ -43,14 +66,31 @@
     if (context) context.textContent = event.relatedTarget?.dataset.description || 'Tell us about your skills, interests and the opportunity you have in mind.';
     const roleField = document.getElementById('application-role');
     roleField.value = roleField.defaultValue = role;
-    const interestField = document.getElementById('application-interest');
-    Array.from(interestField.options).forEach(option => option.defaultSelected = option.value === interest);
-    interestField.value = interest;
+    const isGeneralInterest = interest === 'General Interest';
+    interestOptions.hidden = interestField.disabled = isGeneralInterest;
+    generalInterest.hidden = !isGeneralInterest;
+    for (const option of interestField.options) {
+      option.defaultSelected = option.value === interest;
+    }
+    interestField.value = isGeneralInterest ? 'Internship' : interest;
+    updateInternshipDates();
     form.querySelectorAll('.loading, .error-message, .sent-message').forEach(el => el.classList.remove('d-block'));
-    document.getElementById('application-resume').setCustomValidity('');
   });
-  document.getElementById('application-resume').addEventListener('change', event => {
-    const file = event.target.files[0];
-    event.target.setCustomValidity(file && file.size > 5 * 1024 * 1024 ? 'Please choose a résumé no larger than 5 MB.' : '');
-  });
+  function validateAttachments() {
+    const resumeSize = resume.files[0]?.size ?? 0;
+    const documents = Array.from(supportingDocuments.files);
+    resume.setCustomValidity(resumeSize > maxFileBytes ? 'Please choose a résumé no larger than 5 MB.' : '');
+
+    let error = '';
+    if (documents.length > 3) {
+      error = 'Please choose up to three supporting documents.';
+    } else if (documents.some(file => file.size === 0 || file.size > maxFileBytes)) {
+      error = 'Each supporting document must be non-empty and 5 MB or smaller.';
+    } else if (documents.reduce((total, file) => total + file.size, resumeSize) > 15 * 1024 * 1024) {
+      error = 'Attachments must be 15 MB or smaller in total.';
+    }
+    supportingDocuments.setCustomValidity(error);
+  }
+  resume.addEventListener('change', validateAttachments);
+  supportingDocuments.addEventListener('change', validateAttachments);
 })();

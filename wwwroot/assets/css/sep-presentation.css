@@ -1,4 +1,4 @@
-.sep-presentation { margin: 0 0 42px; min-width: 0; }
+.sep-presentation { margin: 0 0 42px; min-width: 0; background-color: transparent; }
 .sep-presentation-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .sep-presentation-heading .eyebrow { margin-bottom: 8px; }
 .sep-presentation-heading h2 { color: #173548; font-size: clamp(25px, 3vw, 34px); letter-spacing: -1px; margin: 0; }
@@ -9,6 +9,8 @@
 .sep-topic-links a:hover { color: #a54219; border-color: #eaaa8c; background: #fff5ee; }
 .sep-viewer { border: 1px solid #cddce5; border-radius: 14px; background: #102a3b; overflow: hidden; box-shadow: 0 14px 35px #17354810; }
 .sep-slide-stage { position: relative; background: #fff; aspect-ratio: 3 / 2; touch-action: pan-y; }
+.sep-presentation--widescreen .sep-slide-stage,
+.sep-presentation--widescreen .sep-thumbnails img { aspect-ratio: 16 / 9; }
 .sep-slide-stage > img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .sep-expand { position: absolute; right: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #ffffff50; border-radius: 7px; background: #102a3beb; color: #fff; font-size: 12px; }
 .sep-expand[hidden], .sep-viewer-controls[hidden] { display: none; }
@@ -27,11 +29,6 @@
 .sep-thumbnails a:hover { opacity: 1; }
 .sep-thumbnails img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; }
 .sep-thumbnails span { position: absolute; left: 4px; bottom: 4px; border-radius: 3px; padding: 1px 5px; background: #102a3be6; color: white; font-size: 9px; }
-.sep-downloads { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding-top: 14px; margin-top: 4px; border-top: 1px solid #d5e0e6; }
-.sep-presentation .sep-downloads p { margin: 0; font-size: 12px; }
-.sep-downloads > div { display: flex; flex-wrap: wrap; gap: 12px 20px; }
-.sep-downloads a { display: inline-flex; gap: 8px; align-items: center; color: #214f60; font-size: 12px; font-weight: 600; }
-.sep-downloads a:hover { color: #b34720; }
 .sep-dialog { width: min(1500px, calc(100vw - 32px)); max-width: none; max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); margin: auto; padding: 16px; border: 1px solid #ffffff30; border-radius: 14px; background: #102a3b; color: white; overflow-y: auto; }
 .sep-dialog::backdrop { background: #03111be8; }
 .sep-dialog-heading, .sep-dialog-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }

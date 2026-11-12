@@ -11,6 +11,7 @@
     const dialog = root.querySelector('dialog');
     const expand = root.querySelector('[data-sep-expand]');
     const viewer = root.querySelector('.sep-viewer');
+    const documents = root.querySelectorAll('.product-brochure-document');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let current = 0;
 
@@ -21,7 +22,7 @@
       images.forEach(image => {
         image.src = slide.href;
         // The initial Razor image has a versioned src; srcset is deliberately absent.
-        image.alt = `Brochure ${current + 1}: ${title}`;
+        image.alt = `${root.dataset.itemLabel} ${current + 1}: ${title}`;
       });
       slides.forEach((item, position) => {
         if (position === current) item.setAttribute('aria-current', 'true');
@@ -33,12 +34,7 @@
       root.querySelector('[data-sep-count]').textContent = `${String(current + 1).padStart(2, '0')} / ${slides.length}`;
       root.querySelector('[data-sep-title]').textContent = title;
       root.querySelector('[data-sep-dialog-count]').textContent = `${current + 1} / ${slides.length} — ${title}`;
-      root.querySelector('.sep-original-slide').href = slide.href;
-      const download = root.querySelector('[data-sep-download]');
-      if (download) {
-        download.href = slide.dataset.pdf;
-        download.setAttribute('aria-label', `Download ${title} brochure as PDF`);
-      }
+      documents.forEach(link => { link.href = slide.dataset.pdf; });
       if (revealThumbnail) {
         thumbnails.scrollTo({
           left: Math.max(0, slide.offsetLeft - thumbnails.offsetLeft - (thumbnails.clientWidth - slide.offsetWidth) / 2),

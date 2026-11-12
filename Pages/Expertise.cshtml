@@ -41,6 +41,13 @@
                 <p class="eyebrow">HOW WE CAN HELP</p>
                 <h2 class="product-content-title">@current.Title</h2>
                 <p class="product-content-intro">@current.Detail</p>
+                @if (Model.Example is { } example)
+                {
+                    <div class="service-example">
+                        <h3>@example.Title</h3>
+                        <p>@example.Description</p>
+                    </div>
+                }
                 <dl class="product-feature-list">
                 @foreach (var area in Model.Areas)
                 {

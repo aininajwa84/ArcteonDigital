@@ -282,8 +282,10 @@
 .expertise-section .expertise-card > :not(.service-watermark) { position: relative; z-index: 1; }
 .expertise-section .service-watermark { position: absolute; z-index: 0; right: 20px; top: 18px; color: #277c77; opacity: .055; font-size: 132px; line-height: 1; pointer-events: none; transform: rotate(-12deg); }
 .expertise-section .card-topline { margin-bottom: 26px; }
+.expertise-section .service-card-image { display: block; width: 100%; height: auto; aspect-ratio: 1600 / 890; object-fit: cover; border-radius: 10px; }
 .expertise-section .card-topline > i { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 16px; font-size: 34px; color: #236e69; background: linear-gradient(145deg, #ffffffd9, #cde6e17a); border: 1px solid #ffffffed; box-shadow: 0 5px 14px #277c7710, inset 0 1px 0 #fff; }
 .expertise-section .card-topline > span { align-self: flex-start; margin-top: 7px; font-size: 11px; letter-spacing: 1px; color: #637e87; }
+.expertise-section .card-topline > .service-card-image + span { position: absolute; top: 8px; right: 8px; margin: 0; padding: 3px 7px; border-radius: 5px; background: #0d2434; color: #fff; }
 .expertise-section .expertise-card > p { color: #526c79; }
 .expertise-section .expertise-card summary { align-items: center; border-color: #1735481a; }
 .expertise-section .expertise-card summary > i { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid #277c7726; border-radius: 50%; background: #ffffff80; color: #236e69; font-size: 16px; }
@@ -304,18 +306,11 @@
 .footer .footer-links ul a { line-height: 1.4; }
 .footer .footer-contact p { line-height: 1.8; overflow-wrap: anywhere; }
 .footer .footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px 24px;
   padding: 20px calc(var(--bs-gutter-x, 1.5rem) / 2) 24px;
   text-align: left;
 }
-.footer .footer-ownership { min-width: 0; }
-.footer .footer-bottom .credits { margin-top: 0; font-size: 12px; color: rgba(255, 255, 255, 0.6); }
 .footer .footer-md-badge { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; color: rgba(255, 255, 255, 0.6); font-size: 14px; font-weight: 500; }
-.footer .footer-md-badge img { display: block; width: auto; height: 40px; filter: brightness(0) invert(1); }
+.footer .footer-md-badge img { display: block; width: auto; height: 40px; box-sizing: content-box; padding: 4px 8px; border-radius: 5px; background: #fff; }
 .footer .social-links a { transition: color .2s, border-color .2s, transform .2s; }
 .footer .social-links a:hover { transform: translateY(-3px); }
 @media (max-width: 991px) { .footer .footer-top .footer-links { padding-top: 0; } }
@@ -367,7 +362,13 @@
 .product-logo-image.product-logo-queue { width: 140px; height: 70px; }
 .product-logo-image.product-logo-nexus { width: 190px; height: 100px; }
 .product-banner-image { flex-shrink: 0; max-width: 38%; }
-.product-banner-image.product-logo-assets { width: 185px; height: 137px; }
+.product-banner-brand.product-banner-brand-stacked { flex-direction: column; gap: 6px; }
+.product-banner-subtitle { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; padding: 6px 13px; border: 1px solid #ffc4a67a; border-radius: 999px; background: #0d2434; color: #ffc4a6; font-size: 16px; font-weight: 700; line-height: 1.4; }
+.product-banner-ai-description { max-width: 36rem; color: #e0ebf2; font-size: 14px; line-height: 1.5; }
+.product-banner-image.product-logo-clinic { filter: url('../img/products/banner-logo-colours.svg?v=blue#arcteonmed'); }
+.product-banner-image.product-logo-assets { width: 125px; height: 93px; }
+.product-banner-image.product-logo-queue { width: 200px; height: auto; max-width: 75%; filter: url('../img/products/banner-logo-colours.svg#byondq'); }
+.product-banner-image.product-logo-nexus { width: 260px; height: auto; max-width: 75%; }
 /* Match optical weight instead of enlarging every logo to the same width. */
 .products-enhanced .product-brand-panel.has-standalone-logo { height: 140px; background: #f7fafb80; }
 .products-enhanced .product-logo-image.product-logo-hr { width: 90px; height: 90px; }
@@ -389,7 +390,7 @@
   .footer .footer-brand { width: 288px; }
   .product-banner-image.product-logo-hr { width: 76px; height: 76px; }
   .product-banner-image.product-logo-clinic { height: 85px; }
-  .product-banner-image.product-logo-assets { width: 122px; height: 91px; }
+  .product-banner-image.product-logo-assets { width: 82px; height: 61px; }
   .products-enhanced .solution-card h3 { min-height: 0; }
 }
 

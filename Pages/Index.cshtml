@@ -22,7 +22,9 @@
     </section>
     <section id="about" class="section digital-about">
         <div class="container"><div class="row align-items-center gy-5 gx-lg-5">
-            <div class="col-lg-6 about-visual about-team-visual"><img src="~/assets/img/malaysian-it-team.png" alt="Team collaborating around laptops and a whiteboard in a bright office" width="1408" height="768" loading="lazy" asp-append-version="true"><div class="image-caption"><i class="bi bi-people" aria-hidden="true"></i><span>Technology works better<br><strong>when people come first.</strong></span></div></div>
+            <div class="col-lg-6 about-visual about-team-visual">
+                <img src="~/assets/img/malaysian-it-team.png" alt="Team collaborating around laptops and a whiteboard in a bright office" width="1408" height="768" loading="lazy" asp-append-version="true">
+            </div>
             <div class="col-lg-6"><p class="eyebrow">01 / ABOUT ARCTEON DIGITAL</p><h2 class="display-heading">A digital partner.<br>A human approach.</h2><p class="lead-copy">Good solutions begin with understanding your business.</p><p>We bring your goals into focus, simplify complex challenges and build technology around the people who use it. From the first conversation to ongoing support, we work alongside your team.</p><ul class="value-list"><li><i class="bi bi-check2" aria-hidden="true"></i> Client-First Approach</li><li><i class="bi bi-check2" aria-hidden="true"></i> Innovative Technology Integration</li><li><i class="bi bi-check2" aria-hidden="true"></i> Tailored Digital Solutions</li><li><i class="bi bi-check2" aria-hidden="true"></i> Strategic Partnership</li><li><i class="bi bi-check2" aria-hidden="true"></i> Your Digital Innovation Partner</li></ul><a class="inline-link" href="#services">Explore our services <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
         </div></div>
     </section>
@@ -31,7 +33,33 @@
         <div class="expertise-grid">
         @foreach (var service in Model.Services)
         {
-            <article id="service-@service.Number" class="expertise-card"><i class="bi @service.Icon service-watermark" aria-hidden="true"></i><div class="card-topline"><i class="bi @service.Icon" aria-hidden="true"></i><span>@service.Number</span></div><h3>@service.Title</h3><p>@service.Description</p><a asp-page="/Expertise" asp-route-service="@service.Key" class="service-explore" aria-label="Explore @service.Title">Explore service <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></article>
+            var banner = service.Key switch
+            {
+                "artificial-intelligence" => "~/assets/img/artificial-intelligence-service.png",
+                "software-customization" => "~/assets/img/software-customization-service.png",
+                "digital-transformation" => "~/assets/img/digital-transformation-service.png",
+                _ => null
+            };
+            <article id="service-@service.Number" class="expertise-card">
+                @if (banner is null)
+                {
+                    <i class="bi @service.Icon service-watermark" aria-hidden="true"></i>
+                }
+                <div class="card-topline">
+                    @if (banner is not null)
+                    {
+                        <img class="service-card-image" src="@banner" width="1600" height="890" alt="" loading="lazy" asp-append-version="true">
+                    }
+                    else
+                    {
+                        <i class="bi @service.Icon" aria-hidden="true"></i>
+                    }
+                    <span>@service.Number</span>
+                </div>
+                <h3>@service.Title</h3>
+                <p>@service.Description</p>
+                <a asp-page="/Expertise" asp-route-service="@service.Key" class="service-explore" aria-label="Explore @service.Title">Explore service <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            </article>
         }
         </div></div>
     </section>
@@ -87,9 +115,9 @@
                 </div>
 
                 <div class="col-md-12 contact-submit-row">
-                  <div class="loading" role="status">Saving your enquiry…</div>
+                  <div class="loading" role="status">Sending your enquiry…</div>
                   <div class="error-message" role="alert"></div>
-                  <div class="sent-message" role="status">Your message has been saved locally. Thank you!</div>
+                  <div class="sent-message" role="status">Your enquiry has been sent. Thank you!</div>
 
                   <p class="required-note">* Required fields</p><button type="submit">Send Message <i class="bi bi-arrow-up-right" aria-hidden="true"></i></button>
                 </div>

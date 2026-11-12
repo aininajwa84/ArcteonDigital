@@ -4,6 +4,7 @@
     ViewData["Title"] = Model.Solution?.Title ?? "Our expertise";
     ViewData["BodyClass"] = "service-details-page";
     var hasSolution = Model.Solution is not null;
+    var logoOnlyBanner = Model.Solution?.Key is "clinic" or "queue" or "nexus";
     var detailContent = Model.DetailContent;
     var bannerImage = hasSolution ? Url.Content($"~/assets/img/{Model.DetailPhoto.File}") : null;
 }
@@ -13,7 +14,7 @@
             <p class="eyebrow">@(hasSolution ? $"{(Model.Solution!.IsClientSolution ? "CLIENT SOLUTION" : "OUR PRODUCT")} / {Model.Solution.Category}" : "BUSINESS SOLUTIONS / ARCTEON DIGITAL")</p>
             @if (Model.Solution is { } bannerProduct)
             {
-                <div class="product-banner-brand">
+                <div class="product-banner-brand @(bannerProduct.Key == "nexus" ? "product-banner-brand-stacked" : null)">
                     @if (bannerProduct.BannerLogoFile is { } logoFile)
                     {
                         <img class="product-logo-image product-banner-image product-logo-@bannerProduct.Key" src="~/assets/img/products/@logoFile" alt="@bannerProduct.LogoAlt" asp-append-version="true">
@@ -22,7 +23,12 @@
                     {
                         <span class="product-brand @bannerProduct.LogoClass product-banner-logo" role="img" aria-label="@bannerProduct.LogoAlt"></span>
                     }
-                    <h1>@bannerProduct.Title</h1>
+                    <h1 class="@(logoOnlyBanner ? "visually-hidden" : null)">@bannerProduct.Title</h1>
+                    @if (bannerProduct.Key == "nexus")
+                    {
+                        <span class="product-banner-subtitle"><i class="bi bi-stars" aria-hidden="true"></i> Powered by AD.AI</span>
+                        <span class="product-banner-ai-description">AI-assisted document search helps you find information faster.</span>
+                    }
                 </div>
             }
             else
@@ -30,7 +36,16 @@
                 <h1>@ViewData["Title"]</h1>
             }
             <p>@(Model.Solution?.Description ?? "Connected technology, shaped around your business.")</p>
-            <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/#solutions">Solutions</a></li><li class="current">@ViewData["Title"]</li></ol></nav>
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#solutions">Solutions</a></li>
+                    @if (!logoOnlyBanner)
+                    {
+                        <li class="current" aria-current="page">@ViewData["Title"]</li>
+                    }
+                </ol>
+            </nav>
         </div>
     </div>
     <section class="section solution-detail"><div class="container"><div class="row gy-5 gx-lg-5">
@@ -58,9 +73,15 @@
         <div class="col-lg-8 product-detail-content">
         @if (Model.Solution is { } selected)
         {
+            var intro = selected switch
+            {
+                { Key: "nexus" } => "Powered by AD.AI, Arcteon Nexus helps your team find information in digitised records without sorting through paper files.",
+                { IsClientSolution: true } => "Developed for a client’s operational requirements. Explore the project areas below and talk to us about a similar workflow for your business.",
+                _ => "Explore the core areas below, then talk to us about the way your team works."
+            };
             <p class="eyebrow">@(selected.IsClientSolution ? "CLIENT PROJECT / HOW IT HELPS" : "HOW IT HELPS")</p>
             <h2 class="product-content-title">@detailContent.Heading</h2>
-            <p class="product-content-intro">@(selected.IsClientSolution ? "Developed for a client’s operational requirements. Explore the project areas below and talk to us about a similar workflow for your business." : "Explore the core areas below, then talk to us about the way your team works.")</p>
+            <p class="product-content-intro">@intro</p>
             <dl class="product-feature-list">
             @for (var index = 0; index < selected.Features.Length; index++)
             {
@@ -75,33 +96,31 @@
         }
         @if (Model.Solution?.Key == "assets")
         {
-            <partial name="_SepPresentation" model="Dewi.Pages.SepPresentation.Brochures" />
+            <partial name="_SepPresentation" model="Dewi.Pages.SepPresentation.Viewer" />
         }
         else if (Model.HasNexusBrochure)
         {
-            <section id="product-brochures" class="product-brochure" aria-labelledby="nexus-brochure-title">
+            <div id="product-brochures" class="product-brochure" role="region" aria-labelledby="nexus-brochure-title">
                 <div class="product-brochure-heading">
                     <h2 id="nexus-brochure-title">Arcteon Nexus brochure</h2>
-                    <a href="~/assets/brochures/nexus/arcteon-nexus-brochure.pdf" download class="product-brochure-download">Download brochure <i class="bi bi-download" aria-hidden="true"></i></a>
                 </div>
                 <p>Explore the five modules and see how to connect them as your business grows.</p>
                 <a href="~/assets/brochures/nexus/arcteon-nexus-brochure.webp" class="product-brochure-preview glightbox" data-title="Arcteon Nexus brochure" target="_blank" rel="noopener" aria-label="View the Arcteon Nexus brochure full size">
                     <img src="~/assets/brochures/nexus/arcteon-nexus-brochure.webp" alt="Arcteon Nexus brochure covering five business modules and how to get started" width="1800" height="1200" loading="lazy" asp-append-version="true">
                 </a>
-                <p class="product-brochure-caption">
-                    <a href="~/assets/brochures/nexus/arcteon-nexus-brochure.pdf" target="_blank" rel="noopener">Read the brochure PDF <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
-                    · <a href="~/assets/brochures/nexus/arcteon-nexus-presentation.pdf" target="_blank" rel="noopener">Full product presentation <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
-                </p>
-            </section>
+                <partial name="_BrochureActions" model='(Url.Content("~/assets/brochures/nexus/arcteon-nexus-brochure.pdf"), (string?)null)' />
+            </div>
         }
         else if (Model.Brochure is { } brochure)
         {
+            var previewUrl = Url.Content($"~/assets/brochures/{brochure.Preview}");
+            var documentUrl = Url.Content($"~/assets/brochures/{brochure.Pdf ?? brochure.Preview}");
             <section class="product-brochure" aria-labelledby="product-brochure-title">
-                <div class="product-brochure-heading"><h2 id="product-brochure-title">Product brochure</h2><a href="~/assets/brochures/@brochure.File" download class="product-brochure-download">Download brochure <i class="bi bi-download" aria-hidden="true"></i></a></div>
-                <a href="~/assets/brochures/@brochure.File" class="product-brochure-preview glightbox" data-gallery="product-brochure" data-title="@brochure.Title" target="_blank" rel="noopener" aria-label="View @brochure.Title brochure full size">
-                    <img src="~/assets/brochures/@brochure.File" alt="@brochure.Title brochure with product features and module information" width="1536" height="1024" loading="lazy" asp-append-version="true">
+                <div class="product-brochure-heading"><h2 id="product-brochure-title">Product brochure</h2></div>
+                <a href="@previewUrl" class="product-brochure-preview glightbox" data-gallery="product-brochure" data-title="@brochure.Title" target="_blank" rel="noopener" aria-label="View @brochure.Title brochure full size">
+                    <img src="@previewUrl" alt="@brochure.Title brochure with product features" width="@brochure.Width" height="@brochure.Height" loading="lazy" asp-append-version="true">
                 </a>
-                <p class="product-brochure-caption">@brochure.Title · <a href="~/assets/brochures/@brochure.File" target="_blank" rel="noopener">View full-size brochure <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a></p>
+                <partial name="_BrochureActions" model="(documentUrl, (string?)null)" />
             </section>
         }
         @if (hasSolution)

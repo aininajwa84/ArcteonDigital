@@ -9,6 +9,17 @@ public class ExpertiseModel : PageModel
 {
     public Service CurrentService { get; private set; } = null!;
     public IReadOnlyList<Service> Services => IndexModel.ServiceCatalogue;
+    public ServiceArea? Example => CurrentService.Key switch
+    {
+        "artificial-intelligence" => new("Compare supplier quotations faster",
+            "When suppliers send quotations in different formats, AI can extract prices, delivery timelines and payment terms into a side-by-side summary. Your team can review the original quotations and decide which option best fits your needs."),
+        "software-customization" => new("Capture stock movements at the point of work",
+            "If your inventory system relies on staff typing in product codes, we can build a barcode-scanning screen that records items as they arrive or leave. The screen can connect to your existing stock records so staff can check quantities without entering the same information twice."),
+        "digital-transformation" => new("Track approvals in one place",
+            "If your team tracks approvals across spreadsheets and email, we can help you plan a shared workflow where staff submit requests, see who needs to approve them, and check the status in one place."),
+        _ => null
+    };
+
     public IReadOnlyList<ServiceArea> Areas => CurrentService.Number switch
     {
         "01" => [
