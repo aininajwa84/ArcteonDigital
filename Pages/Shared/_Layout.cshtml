@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>@ViewData["Title"] - Arcteon Digital</title>
+  <title>@(ViewData["Title"] is string title ? $"{title} - Arcteon Digital" : "Arcteon Digital")</title>
   <meta name="description" content="Arcteon Digital provides AI, software customization and digital transformation to help businesses improve workflows and connect their processes.">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="~/assets/img/favicon.png" rel="icon">
-  <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="~/assets/img/arcteon-tab-icon.png" rel="icon" type="image/png" asp-append-version="true">
+  <link href="~/assets/img/arcteon-tab-icon.png" rel="apple-touch-icon" asp-append-version="true">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">

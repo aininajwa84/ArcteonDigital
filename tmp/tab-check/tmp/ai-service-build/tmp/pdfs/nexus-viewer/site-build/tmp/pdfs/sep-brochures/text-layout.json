@@ -1,0 +1,2378 @@
+[
+  {
+    "page": 1,
+    "text": "STREAMLINE END-POINT",
+    "x": 70,
+    "top": 24,
+    "width": 250,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "MANAGEMENT SYSTEM",
+    "x": 70,
+    "top": 41,
+    "width": 250,
+    "height": 11.591999999999999
+  },
+  {
+    "page": 1,
+    "text": "PRODUCT OVERVIEW",
+    "x": 26,
+    "top": 83,
+    "width": 308,
+    "height": 13.11
+  },
+  {
+    "page": 1,
+    "text": "Streamline<br/>End-Point",
+    "x": 26,
+    "top": 110,
+    "width": 308,
+    "height": 68
+  },
+  {
+    "page": 1,
+    "text": "Software licensing and computer management system.",
+    "x": 26,
+    "top": 195,
+    "width": 308,
+    "height": 17
+  },
+  {
+    "page": 1,
+    "text": "Simplify management.<br/>Improve efficiency.",
+    "x": 26,
+    "top": 545,
+    "width": 308,
+    "height": 44
+  },
+  {
+    "page": 1,
+    "text": "Achieve optimal performance across daily IT operations.",
+    "x": 26,
+    "top": 599,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 1,
+    "text": "One platform.<br/>Six connected modules.",
+    "x": 386,
+    "top": 35,
+    "width": 308,
+    "height": 56
+  },
+  {
+    "page": 1,
+    "text": "SEP connects device information, asset records and support tickets.",
+    "x": 386,
+    "top": 119,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 1,
+    "text": "Endpoint Management",
+    "x": 428,
+    "top": 184.36,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "Automatic device data collection and updates.",
+    "x": 428,
+    "top": 205.92000000000002,
+    "width": 266,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 1,
+    "text": "IT Service Desk",
+    "x": 428,
+    "top": 238.27200000000002,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "Issue reporting, ticket tracking and SLA alerts.",
+    "x": 428,
+    "top": 259.832,
+    "width": 266,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 1,
+    "text": "System Monitoring",
+    "x": 428,
+    "top": 292.18399999999997,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "Device security status and hardware changes.",
+    "x": 428,
+    "top": 313.74399999999997,
+    "width": 266,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 1,
+    "text": "Smart Analytics",
+    "x": 428,
+    "top": 346.09599999999995,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "AI-assisted issue detection and escalation.",
+    "x": 428,
+    "top": 367.65599999999995,
+    "width": 266,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 1,
+    "text": "IT Asset Management",
+    "x": 428,
+    "top": 400.0079999999999,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "Endpoints and their connected peripherals.",
+    "x": 428,
+    "top": 421.5679999999999,
+    "width": 266,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 1,
+    "text": "Workflow Automation",
+    "x": 428,
+    "top": 453.9199999999999,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "Digital deployment records and approvals.",
+    "x": 428,
+    "top": 475.4799999999999,
+    "width": 266,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 1,
+    "text": "Better visibility.<br/>Less manual work.",
+    "x": 746,
+    "top": 35,
+    "width": 308,
+    "height": 56
+  },
+  {
+    "page": 1,
+    "text": "Central oversight",
+    "x": 788,
+    "top": 126,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "Manage endpoints, equipment and support activity in one place.",
+    "x": 788,
+    "top": 147.56,
+    "width": 266,
+    "height": 30.36
+  },
+  {
+    "page": 1,
+    "text": "Live visibility",
+    "x": 788,
+    "top": 195.92000000000002,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "Review device health, configuration and compliance status.",
+    "x": 788,
+    "top": 217.48000000000002,
+    "width": 266,
+    "height": 30.36
+  },
+  {
+    "page": 1,
+    "text": "Less manual work",
+    "x": 788,
+    "top": 265.84000000000003,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "Automate updates, alerts and approval workflows.",
+    "x": 788,
+    "top": 287.40000000000003,
+    "width": 266,
+    "height": 15.18
+  },
+  {
+    "page": 1,
+    "text": "Faster support",
+    "x": 788,
+    "top": 320.58000000000004,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 1,
+    "text": "Give IT teams the information they need to respond sooner.",
+    "x": 788,
+    "top": 342.14000000000004,
+    "width": 266,
+    "height": 30.36
+  },
+  {
+    "page": 1,
+    "text": "Let\u2019s discuss your IT operations",
+    "x": 761,
+    "top": 541,
+    "width": 278,
+    "height": 19.32
+  },
+  {
+    "page": 1,
+    "text": "Request a quotation or consultation.",
+    "x": 761,
+    "top": 566,
+    "width": 278,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 1,
+    "text": "enquiry@arcteondigital.com.my",
+    "x": 761,
+    "top": 591,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 1,
+    "text": "+603 9226 8079",
+    "x": 761,
+    "top": 610,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 1,
+    "text": "arcteon-digital.com  |  Kuala Lumpur, Malaysia",
+    "x": 761,
+    "top": 632,
+    "width": 278,
+    "height": 12.557999999999998
+  },
+  {
+    "page": 2,
+    "text": "STREAMLINE END-POINT",
+    "x": 70,
+    "top": 24,
+    "width": 250,
+    "height": 16.56
+  },
+  {
+    "page": 2,
+    "text": "MANAGEMENT SYSTEM",
+    "x": 70,
+    "top": 41,
+    "width": 250,
+    "height": 11.591999999999999
+  },
+  {
+    "page": 2,
+    "text": "MODULE 01",
+    "x": 26,
+    "top": 83,
+    "width": 308,
+    "height": 13.11
+  },
+  {
+    "page": 2,
+    "text": "Endpoint<br/>Management",
+    "x": 26,
+    "top": 110,
+    "width": 308,
+    "height": 68
+  },
+  {
+    "page": 2,
+    "text": "Automatic records and a central view of endpoint status.",
+    "x": 26,
+    "top": 195,
+    "width": 308,
+    "height": 17
+  },
+  {
+    "page": 2,
+    "text": "A central view of<br/>your endpoints",
+    "x": 26,
+    "top": 545,
+    "width": 308,
+    "height": 44
+  },
+  {
+    "page": 2,
+    "text": "Automatic records, live updates and information for operational decisions.",
+    "x": 26,
+    "top": 599,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 2,
+    "text": "What the module does",
+    "x": 386,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 2,
+    "text": "Automatic records and a central view of endpoint status.",
+    "x": 386,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 2,
+    "text": "Automated data collection",
+    "x": 428,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 2,
+    "text": "Collect device information in a central repository.",
+    "x": 428,
+    "top": 162.74,
+    "width": 266,
+    "height": 14.904
+  },
+  {
+    "page": 2,
+    "text": "Live endpoint updates",
+    "x": 428,
+    "top": 195.644,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 2,
+    "text": "Monitor device status, configuration and potential issues.",
+    "x": 428,
+    "top": 217.204,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 2,
+    "text": "SEP system screen from the product presentation",
+    "x": 386,
+    "top": 530,
+    "width": 308,
+    "height": 11.454
+  },
+  {
+    "page": 2,
+    "text": "Operational view",
+    "x": 386,
+    "top": 558,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 2,
+    "text": "Why it matters",
+    "x": 746,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 2,
+    "text": "Operational benefits",
+    "x": 746,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 2,
+    "text": "Less manual administration",
+    "x": 788,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 2,
+    "text": "Reduce time spent tracking and updating device records.",
+    "x": 788,
+    "top": 162.74,
+    "width": 266,
+    "height": 29.255999999999997
+  },
+  {
+    "page": 2,
+    "text": "Better decisions",
+    "x": 788,
+    "top": 209.996,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 2,
+    "text": "Use live information to prioritise action.",
+    "x": 788,
+    "top": 231.556,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 2,
+    "text": "Centralised oversight",
+    "x": 788,
+    "top": 264.18399999999997,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 2,
+    "text": "Support reporting and audit readiness.",
+    "x": 788,
+    "top": 285.74399999999997,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 2,
+    "text": "Lower disruption",
+    "x": 788,
+    "top": 318.37199999999996,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 2,
+    "text": "Proactive maintenance helps reduce downtime and costs.",
+    "x": 788,
+    "top": 339.93199999999996,
+    "width": 266,
+    "height": 29.255999999999997
+  },
+  {
+    "page": 2,
+    "text": "Let\u2019s discuss your IT operations",
+    "x": 761,
+    "top": 541,
+    "width": 278,
+    "height": 19.32
+  },
+  {
+    "page": 2,
+    "text": "Request a quotation or consultation.",
+    "x": 761,
+    "top": 566,
+    "width": 278,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 2,
+    "text": "enquiry@arcteondigital.com.my",
+    "x": 761,
+    "top": 591,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 2,
+    "text": "+603 9226 8079",
+    "x": 761,
+    "top": 610,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 2,
+    "text": "arcteon-digital.com  |  Kuala Lumpur, Malaysia",
+    "x": 761,
+    "top": 632,
+    "width": 278,
+    "height": 12.557999999999998
+  },
+  {
+    "page": 3,
+    "text": "STREAMLINE END-POINT",
+    "x": 70,
+    "top": 24,
+    "width": 250,
+    "height": 16.56
+  },
+  {
+    "page": 3,
+    "text": "MANAGEMENT SYSTEM",
+    "x": 70,
+    "top": 41,
+    "width": 250,
+    "height": 11.591999999999999
+  },
+  {
+    "page": 3,
+    "text": "MODULE 02",
+    "x": 26,
+    "top": 83,
+    "width": 308,
+    "height": 13.11
+  },
+  {
+    "page": 3,
+    "text": "IT Service<br/>Desk",
+    "x": 26,
+    "top": 110,
+    "width": 308,
+    "height": 68
+  },
+  {
+    "page": 3,
+    "text": "Issue reporting and support tracking in one place.",
+    "x": 26,
+    "top": 195,
+    "width": 308,
+    "height": 17
+  },
+  {
+    "page": 3,
+    "text": "Clearer requests.<br/>Faster diagnosis.",
+    "x": 26,
+    "top": 545,
+    "width": 308,
+    "height": 44
+  },
+  {
+    "page": 3,
+    "text": "Give employees a direct route to support and help IT teams prioritise cases.",
+    "x": 26,
+    "top": 599,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 3,
+    "text": "What the module does",
+    "x": 386,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 3,
+    "text": "Issue reporting and support tracking in one place.",
+    "x": 386,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 3,
+    "text": "Direct issue reporting",
+    "x": 428,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 3,
+    "text": "Employees open cases from the SEP agent on their computers.",
+    "x": 428,
+    "top": 162.74,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 3,
+    "text": "Screenshots for diagnosis",
+    "x": 428,
+    "top": 210.548,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 3,
+    "text": "Attach error screenshots to help IT teams understand the issue.",
+    "x": 428,
+    "top": 232.108,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 3,
+    "text": "SLA monitoring",
+    "x": 428,
+    "top": 279.916,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 3,
+    "text": "Track resolution times and alert teams to overdue tickets.",
+    "x": 428,
+    "top": 301.476,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 3,
+    "text": "SEP system screen from the product presentation",
+    "x": 386,
+    "top": 538.284,
+    "width": 308,
+    "height": 11.454
+  },
+  {
+    "page": 3,
+    "text": "Operational view",
+    "x": 386,
+    "top": 566.284,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 3,
+    "text": "Why it matters",
+    "x": 746,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 3,
+    "text": "Operational benefits",
+    "x": 746,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 3,
+    "text": "Easier reporting",
+    "x": 788,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 3,
+    "text": "Give employees a clear way to request help.",
+    "x": 788,
+    "top": 162.74,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 3,
+    "text": "Faster diagnosis",
+    "x": 788,
+    "top": 195.368,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 3,
+    "text": "Provide support teams with useful issue details.",
+    "x": 788,
+    "top": 216.928,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 3,
+    "text": "Clear priorities",
+    "x": 788,
+    "top": 249.55599999999998,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 3,
+    "text": "SLA alerts help teams prioritise critical cases.",
+    "x": 788,
+    "top": 271.116,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 3,
+    "text": "Greater transparency",
+    "x": 788,
+    "top": 303.74399999999997,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 3,
+    "text": "Track support activity and communication centrally.",
+    "x": 788,
+    "top": 325.304,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 3,
+    "text": "Let\u2019s discuss your IT operations",
+    "x": 761,
+    "top": 541,
+    "width": 278,
+    "height": 19.32
+  },
+  {
+    "page": 3,
+    "text": "Request a quotation or consultation.",
+    "x": 761,
+    "top": 566,
+    "width": 278,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 3,
+    "text": "enquiry@arcteondigital.com.my",
+    "x": 761,
+    "top": 591,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 3,
+    "text": "+603 9226 8079",
+    "x": 761,
+    "top": 610,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 3,
+    "text": "arcteon-digital.com  |  Kuala Lumpur, Malaysia",
+    "x": 761,
+    "top": 632,
+    "width": 278,
+    "height": 12.557999999999998
+  },
+  {
+    "page": 4,
+    "text": "STREAMLINE END-POINT",
+    "x": 70,
+    "top": 24,
+    "width": 250,
+    "height": 16.56
+  },
+  {
+    "page": 4,
+    "text": "MANAGEMENT SYSTEM",
+    "x": 70,
+    "top": 41,
+    "width": 250,
+    "height": 11.591999999999999
+  },
+  {
+    "page": 4,
+    "text": "MODULE 03",
+    "x": 26,
+    "top": 83,
+    "width": 308,
+    "height": 13.11
+  },
+  {
+    "page": 4,
+    "text": "System<br/>Monitoring",
+    "x": 26,
+    "top": 110,
+    "width": 308,
+    "height": 68
+  },
+  {
+    "page": 4,
+    "text": "Visibility into device security and hardware configuration.",
+    "x": 26,
+    "top": 195,
+    "width": 308,
+    "height": 17
+  },
+  {
+    "page": 4,
+    "text": "Stay informed about<br/>device security",
+    "x": 26,
+    "top": 545,
+    "width": 308,
+    "height": 44
+  },
+  {
+    "page": 4,
+    "text": "Review security status, hardware changes and records for audit reporting.",
+    "x": 26,
+    "top": 599,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 4,
+    "text": "What the module does",
+    "x": 386,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 4,
+    "text": "Visibility into device security and hardware configuration.",
+    "x": 386,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 4,
+    "text": "Security status",
+    "x": 428,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 4,
+    "text": "Monitor antivirus, system updates, USB policies and drive encryption.",
+    "x": 428,
+    "top": 162.74,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 4,
+    "text": "Hardware changes",
+    "x": 428,
+    "top": 210.548,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 4,
+    "text": "Track changes to components in registered devices.",
+    "x": 428,
+    "top": 232.108,
+    "width": 266,
+    "height": 14.904
+  },
+  {
+    "page": 4,
+    "text": "SEP system screen from the product presentation",
+    "x": 386,
+    "top": 530,
+    "width": 308,
+    "height": 11.454
+  },
+  {
+    "page": 4,
+    "text": "Connected to the SEP platform",
+    "x": 386,
+    "top": 568,
+    "width": 308,
+    "height": 16.56
+  },
+  {
+    "page": 4,
+    "text": "This module forms part of the connected capabilities across the IT device lifecycle.",
+    "x": 386,
+    "top": 592,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 4,
+    "text": "Why it matters",
+    "x": 746,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 4,
+    "text": "Operational benefits",
+    "x": 746,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 4,
+    "text": "Stronger oversight",
+    "x": 788,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 4,
+    "text": "Review device security status continuously.",
+    "x": 788,
+    "top": 162.74,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 4,
+    "text": "Earlier action",
+    "x": 788,
+    "top": 195.368,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 4,
+    "text": "Identify missed updates and potential risks.",
+    "x": 788,
+    "top": 216.928,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 4,
+    "text": "Accurate asset records",
+    "x": 788,
+    "top": 249.55599999999998,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 4,
+    "text": "Track hardware changes and investigate discrepancies.",
+    "x": 788,
+    "top": 271.116,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 4,
+    "text": "Compliance support",
+    "x": 788,
+    "top": 303.74399999999997,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 4,
+    "text": "Maintain monitoring records for reporting and audits.",
+    "x": 788,
+    "top": 325.304,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 4,
+    "text": "Let\u2019s discuss your IT operations",
+    "x": 761,
+    "top": 541,
+    "width": 278,
+    "height": 19.32
+  },
+  {
+    "page": 4,
+    "text": "Request a quotation or consultation.",
+    "x": 761,
+    "top": 566,
+    "width": 278,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 4,
+    "text": "enquiry@arcteondigital.com.my",
+    "x": 761,
+    "top": 591,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 4,
+    "text": "+603 9226 8079",
+    "x": 761,
+    "top": 610,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 4,
+    "text": "arcteon-digital.com  |  Kuala Lumpur, Malaysia",
+    "x": 761,
+    "top": 632,
+    "width": 278,
+    "height": 12.557999999999998
+  },
+  {
+    "page": 5,
+    "text": "STREAMLINE END-POINT",
+    "x": 70,
+    "top": 24,
+    "width": 250,
+    "height": 16.56
+  },
+  {
+    "page": 5,
+    "text": "MANAGEMENT SYSTEM",
+    "x": 70,
+    "top": 41,
+    "width": 250,
+    "height": 11.591999999999999
+  },
+  {
+    "page": 5,
+    "text": "MODULE 04",
+    "x": 26,
+    "top": 83,
+    "width": 308,
+    "height": 13.11
+  },
+  {
+    "page": 5,
+    "text": "Smart<br/>Analytics",
+    "x": 26,
+    "top": 110,
+    "width": 308,
+    "height": 68
+  },
+  {
+    "page": 5,
+    "text": "AI-assisted monitoring helps IT teams identify issues sooner.",
+    "x": 26,
+    "top": 195,
+    "width": 308,
+    "height": 34
+  },
+  {
+    "page": 5,
+    "text": "Identify issues<br/>sooner",
+    "x": 26,
+    "top": 545,
+    "width": 308,
+    "height": 44
+  },
+  {
+    "page": 5,
+    "text": "AI-assisted detection, automatic escalation and configurable monitoring.",
+    "x": 26,
+    "top": 599,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 5,
+    "text": "What the module does",
+    "x": 386,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 5,
+    "text": "AI-assisted monitoring helps IT teams identify issues sooner.",
+    "x": 386,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 5,
+    "text": "Early issue detection",
+    "x": 428,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 5,
+    "text": "Identify unusual patterns, specification mismatches and agent faults.",
+    "x": 428,
+    "top": 162.74,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 5,
+    "text": "Automatic escalation",
+    "x": 428,
+    "top": 210.548,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 5,
+    "text": "Create alerts or support tickets for detected issues.",
+    "x": 428,
+    "top": 232.108,
+    "width": 266,
+    "height": 14.904
+  },
+  {
+    "page": 5,
+    "text": "Configurable monitoring",
+    "x": 428,
+    "top": 265.012,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 5,
+    "text": "Set rules and alert levels to suit operational needs.",
+    "x": 428,
+    "top": 286.572,
+    "width": 266,
+    "height": 14.904
+  },
+  {
+    "page": 5,
+    "text": "SEP system screen from the product presentation",
+    "x": 386,
+    "top": 530,
+    "width": 308,
+    "height": 11.454
+  },
+  {
+    "page": 5,
+    "text": "Connected to the SEP platform",
+    "x": 386,
+    "top": 568,
+    "width": 308,
+    "height": 16.56
+  },
+  {
+    "page": 5,
+    "text": "This module forms part of the connected capabilities across the IT device lifecycle.",
+    "x": 386,
+    "top": 592,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 5,
+    "text": "Why it matters",
+    "x": 746,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 5,
+    "text": "Operational benefits",
+    "x": 746,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 5,
+    "text": "Proactive support",
+    "x": 788,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 5,
+    "text": "Identify and escalate issues sooner.",
+    "x": 788,
+    "top": 162.74,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 5,
+    "text": "Less manual monitoring",
+    "x": 788,
+    "top": 195.368,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 5,
+    "text": "Give IT teams more time for other priorities.",
+    "x": 788,
+    "top": 216.928,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 5,
+    "text": "Improved reliability",
+    "x": 788,
+    "top": 249.55599999999998,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 5,
+    "text": "Support timely resolution of critical issues.",
+    "x": 788,
+    "top": 271.116,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 5,
+    "text": "Relevant alerts",
+    "x": 788,
+    "top": 303.74399999999997,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 5,
+    "text": "Customise alert types and levels for the organisation.",
+    "x": 788,
+    "top": 325.304,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 5,
+    "text": "Let\u2019s discuss your IT operations",
+    "x": 761,
+    "top": 541,
+    "width": 278,
+    "height": 19.32
+  },
+  {
+    "page": 5,
+    "text": "Request a quotation or consultation.",
+    "x": 761,
+    "top": 566,
+    "width": 278,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 5,
+    "text": "enquiry@arcteondigital.com.my",
+    "x": 761,
+    "top": 591,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 5,
+    "text": "+603 9226 8079",
+    "x": 761,
+    "top": 610,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 5,
+    "text": "arcteon-digital.com  |  Kuala Lumpur, Malaysia",
+    "x": 761,
+    "top": 632,
+    "width": 278,
+    "height": 12.557999999999998
+  },
+  {
+    "page": 6,
+    "text": "STREAMLINE END-POINT",
+    "x": 70,
+    "top": 24,
+    "width": 250,
+    "height": 16.56
+  },
+  {
+    "page": 6,
+    "text": "MANAGEMENT SYSTEM",
+    "x": 70,
+    "top": 41,
+    "width": 250,
+    "height": 11.591999999999999
+  },
+  {
+    "page": 6,
+    "text": "MODULE 05",
+    "x": 26,
+    "top": 83,
+    "width": 308,
+    "height": 13.11
+  },
+  {
+    "page": 6,
+    "text": "IT Asset<br/>Management",
+    "x": 26,
+    "top": 110,
+    "width": 308,
+    "height": 68
+  },
+  {
+    "page": 6,
+    "text": "A central record of IT equipment and its connected endpoints.",
+    "x": 26,
+    "top": 195,
+    "width": 308,
+    "height": 34
+  },
+  {
+    "page": 6,
+    "text": "Connected equipment.<br/>Clearer accountability.",
+    "x": 26,
+    "top": 545,
+    "width": 308,
+    "height": 44
+  },
+  {
+    "page": 6,
+    "text": "Keep endpoints and their associated peripherals in a central equipment record.",
+    "x": 26,
+    "top": 599,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 6,
+    "text": "What the module does",
+    "x": 386,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 6,
+    "text": "A central record of IT equipment and its connected endpoints.",
+    "x": 386,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 6,
+    "text": "Peripherals in the inventory",
+    "x": 428,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 6,
+    "text": "Record printers, scanners and other IT equipment.",
+    "x": 428,
+    "top": 162.74,
+    "width": 266,
+    "height": 14.904
+  },
+  {
+    "page": 6,
+    "text": "Linked device records",
+    "x": 428,
+    "top": 195.644,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 6,
+    "text": "Associate peripherals with PCs or laptops using endpoint serial numbers.",
+    "x": 428,
+    "top": 217.204,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 6,
+    "text": "Clear equipment relationships",
+    "x": 428,
+    "top": 265.012,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 6,
+    "text": "For example, link a printer to the PC that uses it.",
+    "x": 428,
+    "top": 286.572,
+    "width": 266,
+    "height": 14.904
+  },
+  {
+    "page": 6,
+    "text": "SEP system screen from the product presentation",
+    "x": 386,
+    "top": 530,
+    "width": 308,
+    "height": 11.454
+  },
+  {
+    "page": 6,
+    "text": "Connected to the SEP platform",
+    "x": 386,
+    "top": 568,
+    "width": 308,
+    "height": 16.56
+  },
+  {
+    "page": 6,
+    "text": "This module forms part of the connected capabilities across the IT device lifecycle.",
+    "x": 386,
+    "top": 592,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 6,
+    "text": "Why it matters",
+    "x": 746,
+    "top": 35,
+    "width": 308,
+    "height": 28
+  },
+  {
+    "page": 6,
+    "text": "Operational benefits",
+    "x": 746,
+    "top": 91,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 6,
+    "text": "Clear accountability",
+    "x": 788,
+    "top": 141.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 6,
+    "text": "Link equipment to its associated endpoint.",
+    "x": 788,
+    "top": 162.74,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 6,
+    "text": "Simpler tracking",
+    "x": 788,
+    "top": 195.368,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 6,
+    "text": "Group related devices for easier audits and updates.",
+    "x": 788,
+    "top": 216.928,
+    "width": 266,
+    "height": 14.627999999999998
+  },
+  {
+    "page": 6,
+    "text": "Inventory visibility",
+    "x": 788,
+    "top": 249.55599999999998,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 6,
+    "text": "Review equipment records, status and recorded locations.",
+    "x": 788,
+    "top": 271.116,
+    "width": 266,
+    "height": 29.255999999999997
+  },
+  {
+    "page": 6,
+    "text": "Coordinated maintenance",
+    "x": 788,
+    "top": 318.37199999999996,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 6,
+    "text": "Maintain peripherals alongside their connected endpoints.",
+    "x": 788,
+    "top": 339.93199999999996,
+    "width": 266,
+    "height": 29.255999999999997
+  },
+  {
+    "page": 6,
+    "text": "Let\u2019s discuss your IT operations",
+    "x": 761,
+    "top": 541,
+    "width": 278,
+    "height": 19.32
+  },
+  {
+    "page": 6,
+    "text": "Request a quotation or consultation.",
+    "x": 761,
+    "top": 566,
+    "width": 278,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 6,
+    "text": "enquiry@arcteondigital.com.my",
+    "x": 761,
+    "top": 591,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 6,
+    "text": "+603 9226 8079",
+    "x": 761,
+    "top": 610,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 6,
+    "text": "arcteon-digital.com  |  Kuala Lumpur, Malaysia",
+    "x": 761,
+    "top": 632,
+    "width": 278,
+    "height": 12.557999999999998
+  },
+  {
+    "page": 7,
+    "text": "STREAMLINE END-POINT",
+    "x": 70,
+    "top": 24,
+    "width": 250,
+    "height": 16.56
+  },
+  {
+    "page": 7,
+    "text": "MANAGEMENT SYSTEM",
+    "x": 70,
+    "top": 41,
+    "width": 250,
+    "height": 11.591999999999999
+  },
+  {
+    "page": 7,
+    "text": "MODULE 06",
+    "x": 26,
+    "top": 83,
+    "width": 308,
+    "height": 13.11
+  },
+  {
+    "page": 7,
+    "text": "Paperless<br/>workflow<br/>automation",
+    "x": 26,
+    "top": 110,
+    "width": 308,
+    "height": 102
+  },
+  {
+    "page": 7,
+    "text": "Digital approvals and automated maintenance checks",
+    "x": 26,
+    "top": 232,
+    "width": 308,
+    "height": 16.56
+  },
+  {
+    "page": 7,
+    "text": "Workflow approvals.<br/>Traceable records.",
+    "x": 26,
+    "top": 560,
+    "width": 308,
+    "height": 44
+  },
+  {
+    "page": 7,
+    "text": "Replace printed forms and manual sign-offs with digital records and traceable approvals.",
+    "x": 26,
+    "top": 614,
+    "width": 308,
+    "height": 28.428
+  },
+  {
+    "page": 7,
+    "text": "Digital forms<br/>and approvals",
+    "x": 386,
+    "top": 35,
+    "width": 308,
+    "height": 56
+  },
+  {
+    "page": 7,
+    "text": "Workflow Processing with Digital Signature Approval",
+    "x": 386,
+    "top": 119,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 7,
+    "text": "Customisable forms",
+    "x": 428,
+    "top": 169.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 7,
+    "text": "Design forms and approval steps around business processes.",
+    "x": 428,
+    "top": 190.74,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 7,
+    "text": "Digital sign-off",
+    "x": 428,
+    "top": 238.548,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 7,
+    "text": "Capture SAP and UAT approvals with signer verification.",
+    "x": 428,
+    "top": 260.108,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 7,
+    "text": "Progress and audit trail",
+    "x": 428,
+    "top": 307.916,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 7,
+    "text": "Track approval status and retain the supporting records.",
+    "x": 428,
+    "top": 329.476,
+    "width": 266,
+    "height": 29.808
+  },
+  {
+    "page": 7,
+    "text": "Paperless documentation",
+    "x": 428,
+    "top": 377.284,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 7,
+    "text": "Reduce printing, manual filing and repeated follow-ups.",
+    "x": 428,
+    "top": 398.844,
+    "width": 266,
+    "height": 14.904
+  },
+  {
+    "page": 7,
+    "text": "Part of Workflow Automation",
+    "x": 386,
+    "top": 438.748,
+    "width": 308,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 7,
+    "text": "Preventive<br/>Maintenance",
+    "x": 746,
+    "top": 35,
+    "width": 308,
+    "height": 56
+  },
+  {
+    "page": 7,
+    "text": "Automated checks before digital approval",
+    "x": 746,
+    "top": 119,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 7,
+    "text": "01  Run the checklist",
+    "x": 788,
+    "top": 169.18,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 7,
+    "text": "A one-click check verifies the required maintenance items.",
+    "x": 788,
+    "top": 190.74,
+    "width": 266,
+    "height": 30.36
+  },
+  {
+    "page": 7,
+    "text": "02  Resolve failed items",
+    "x": 788,
+    "top": 239.10000000000002,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 7,
+    "text": "If an item fails, approval remains blocked until the requirement is met.",
+    "x": 788,
+    "top": 260.66,
+    "width": 266,
+    "height": 30.36
+  },
+  {
+    "page": 7,
+    "text": "03  Retain the record",
+    "x": 788,
+    "top": 309.02000000000004,
+    "width": 266,
+    "height": 16.56
+  },
+  {
+    "page": 7,
+    "text": "Keep maintenance results available for governance and audit.",
+    "x": 788,
+    "top": 330.58000000000004,
+    "width": 266,
+    "height": 30.36
+  },
+  {
+    "page": 7,
+    "text": "Verify required checks before allowing approval to proceed.",
+    "x": 746,
+    "top": 379.94000000000005,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 7,
+    "text": "Let\u2019s discuss your IT operations",
+    "x": 761,
+    "top": 541,
+    "width": 278,
+    "height": 19.32
+  },
+  {
+    "page": 7,
+    "text": "Request a quotation or consultation.",
+    "x": 761,
+    "top": 566,
+    "width": 278,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 7,
+    "text": "enquiry@arcteondigital.com.my",
+    "x": 761,
+    "top": 591,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 7,
+    "text": "+603 9226 8079",
+    "x": 761,
+    "top": 610,
+    "width": 278,
+    "height": 14.351999999999999
+  },
+  {
+    "page": 7,
+    "text": "arcteon-digital.com  |  Kuala Lumpur, Malaysia",
+    "x": 761,
+    "top": 632,
+    "width": 278,
+    "height": 12.557999999999998
+  },
+  {
+    "page": 8,
+    "text": "STREAMLINE END-POINT",
+    "x": 70,
+    "top": 24,
+    "width": 250,
+    "height": 16.56
+  },
+  {
+    "page": 8,
+    "text": "MANAGEMENT SYSTEM",
+    "x": 70,
+    "top": 41,
+    "width": 250,
+    "height": 11.591999999999999
+  },
+  {
+    "page": 8,
+    "text": "WORKFLOW AUTOMATION / DEPLOYMENT",
+    "x": 26,
+    "top": 83,
+    "width": 308,
+    "height": 12.419999999999998
+  },
+  {
+    "page": 8,
+    "text": "From arrival to<br/>project closure",
+    "x": 26,
+    "top": 110,
+    "width": 308,
+    "height": 66
+  },
+  {
+    "page": 8,
+    "text": "Less manual administration throughout the deployment process.",
+    "x": 26,
+    "top": 192,
+    "width": 308,
+    "height": 31.74
+  },
+  {
+    "page": 8,
+    "text": "Automatic recordkeeping",
+    "x": 26,
+    "top": 241,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Update device and deployment records with less manual input.",
+    "x": 26,
+    "top": 260.18,
+    "width": 308,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 8,
+    "text": "Digital forms and signatures",
+    "x": 26,
+    "top": 287.25600000000003,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Capture approvals with a clear record of progress.",
+    "x": 26,
+    "top": 306.43600000000004,
+    "width": 308,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 8,
+    "text": "Project visibility",
+    "x": 26,
+    "top": 333.51200000000006,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "View deployment status and download reports from the web portal.",
+    "x": 26,
+    "top": 352.69200000000006,
+    "width": 308,
+    "height": 14.075999999999999
+  },
+  {
+    "page": 8,
+    "text": "SEP agent device tagging",
+    "x": 26,
+    "top": 397.7680000000001,
+    "width": 308,
+    "height": 19.32
+  },
+  {
+    "page": 8,
+    "text": "Device tagging",
+    "x": 26,
+    "top": 427.0880000000001,
+    "width": 308,
+    "height": 14.489999999999998
+  },
+  {
+    "page": 8,
+    "text": "Tag devices as part of installation and configuration.",
+    "x": 26,
+    "top": 444.5780000000001,
+    "width": 308,
+    "height": 13.524
+  },
+  {
+    "page": 8,
+    "text": "Automatic data capture",
+    "x": 26,
+    "top": 467.1020000000001,
+    "width": 308,
+    "height": 14.489999999999998
+  },
+  {
+    "page": 8,
+    "text": "The SEP agent collects device information and stores it in the backend system.",
+    "x": 26,
+    "top": 484.5920000000001,
+    "width": 308,
+    "height": 27.048
+  },
+  {
+    "page": 8,
+    "text": "Deployment checklist",
+    "x": 26,
+    "top": 526.6400000000001,
+    "width": 308,
+    "height": 19.32
+  },
+  {
+    "page": 8,
+    "text": "Automated verification",
+    "x": 26,
+    "top": 554.9600000000002,
+    "width": 308,
+    "height": 14.489999999999998
+  },
+  {
+    "page": 8,
+    "text": "Use the system checklist to confirm that required deployment activities are complete.",
+    "x": 26,
+    "top": 572.4500000000002,
+    "width": 308,
+    "height": 27.048
+  },
+  {
+    "page": 8,
+    "text": "Clear completion status",
+    "x": 26,
+    "top": 607.4980000000002,
+    "width": 308,
+    "height": 14.489999999999998
+  },
+  {
+    "page": 8,
+    "text": "Review checklist results before the next approval step.",
+    "x": 26,
+    "top": 624.9880000000002,
+    "width": 308,
+    "height": 13.524
+  },
+  {
+    "page": 8,
+    "text": "Current deployment<br/>process",
+    "x": 386,
+    "top": 35,
+    "width": 308,
+    "height": 56
+  },
+  {
+    "page": 8,
+    "text": "Manual records and signature follow-ups create waiting time.",
+    "x": 386,
+    "top": 119,
+    "width": 308,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "01",
+    "x": 390,
+    "top": 172.18,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Receive devices",
+    "x": 423,
+    "top": 168.18,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Excel register and serial-number scanning",
+    "x": 423,
+    "top": 186.36,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "02",
+    "x": 390,
+    "top": 221.298,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Prepare devices",
+    "x": 423,
+    "top": 217.298,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Install, configure and update Excel",
+    "x": 423,
+    "top": 235.478,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "03",
+    "x": 390,
+    "top": 270.416,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Prepare documents",
+    "x": 423,
+    "top": 266.416,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Pack stock. Print labels, DO, SAP and SPP.",
+    "x": 423,
+    "top": 284.596,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "04",
+    "x": 390,
+    "top": 319.534,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Deliver devices",
+    "x": 423,
+    "top": 315.534,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Deliver equipment and obtain DO/SAP sign-off",
+    "x": 423,
+    "top": 333.714,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "05",
+    "x": 390,
+    "top": 368.652,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Checkout submission",
+    "x": 423,
+    "top": 364.652,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Verify signatures, stamps and dates",
+    "x": 423,
+    "top": 382.832,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "06",
+    "x": 390,
+    "top": 417.77,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Follow-up sign-off",
+    "x": 423,
+    "top": 413.77,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Reminders, corrections and PPD/JPN escalation",
+    "x": 423,
+    "top": 431.95,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "07",
+    "x": 390,
+    "top": 466.888,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Onsite support",
+    "x": 423,
+    "top": 462.888,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Distribute devices. Obtain SPP/UAT sign-off.",
+    "x": 423,
+    "top": 481.068,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "08",
+    "x": 390,
+    "top": 516.006,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Project closure",
+    "x": 423,
+    "top": 512.006,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Consolidate reports and submit to BPM",
+    "x": 423,
+    "top": 530.1859999999999,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "Deployment<br/>with SEP",
+    "x": 746,
+    "top": 35,
+    "width": 308,
+    "height": 56
+  },
+  {
+    "page": 8,
+    "text": "Automatic tracking and online approvals reduce repeated administration.",
+    "x": 746,
+    "top": 119,
+    "width": 308,
+    "height": 30.36
+  },
+  {
+    "page": 8,
+    "text": "01",
+    "x": 750,
+    "top": 187.36,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Receive devices",
+    "x": 783,
+    "top": 183.36,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Register devices. Scan non-PC serial numbers.",
+    "x": 783,
+    "top": 201.54000000000002,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "02",
+    "x": 750,
+    "top": 236.478,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Prepare devices",
+    "x": 783,
+    "top": 232.478,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Install SEP and track progress automatically",
+    "x": 783,
+    "top": 250.65800000000002,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "03",
+    "x": 750,
+    "top": 285.596,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Prepare documents",
+    "x": 783,
+    "top": 281.596,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Generate labels and print the DO only",
+    "x": 783,
+    "top": 299.776,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "04",
+    "x": 750,
+    "top": 334.714,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Deliver devices",
+    "x": 783,
+    "top": 330.714,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Deliver equipment and obtain DO sign-off",
+    "x": 783,
+    "top": 348.894,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "05",
+    "x": 750,
+    "top": 383.832,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Checkout submission",
+    "x": 783,
+    "top": 379.832,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Online SAP approval, OTP and automatic reminders",
+    "x": 783,
+    "top": 398.012,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "06",
+    "x": 750,
+    "top": 432.95,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Onsite support",
+    "x": 783,
+    "top": 428.95,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Automatic tracking and online SPP/UAT approval",
+    "x": 783,
+    "top": 447.13,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "07",
+    "x": 750,
+    "top": 482.068,
+    "width": 20,
+    "height": 13.799999999999999
+  },
+  {
+    "page": 8,
+    "text": "Project closure",
+    "x": 783,
+    "top": 478.068,
+    "width": 271,
+    "height": 15.18
+  },
+  {
+    "page": 8,
+    "text": "Download reports and submit digital records to BPM",
+    "x": 783,
+    "top": 496.248,
+    "width": 271,
+    "height": 13.937999999999999
+  },
+  {
+    "page": 8,
+    "text": "Digital approvals include OTP verification, reminders and escalation.",
+    "x": 760,
+    "top": 542.1859999999999,
+    "width": 280,
+    "height": 28.979999999999997
+  }
+]
