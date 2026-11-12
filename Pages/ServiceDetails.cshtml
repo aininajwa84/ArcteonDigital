@@ -36,6 +36,10 @@
                 <h1>@ViewData["Title"]</h1>
             }
             <p>@(Model.Solution?.Description ?? "Connected technology, shaped around your business.")</p>
+            @if (Model.Solution?.Key == "hr")
+            {
+                <a href="#workvibes-downloads" class="inline-link mb-3">Downloads &amp; guides <i class="bi bi-arrow-down" aria-hidden="true"></i></a>
+            }
             <nav class="breadcrumbs" aria-label="Breadcrumb">
                 <ol>
                     <li><a href="/">Home</a></li>
@@ -121,6 +125,39 @@
                     <img src="@previewUrl" alt="@brochure.Title brochure with product features" width="@brochure.Width" height="@brochure.Height" loading="lazy" asp-append-version="true">
                 </a>
                 <partial name="_BrochureActions" model="(documentUrl, (string?)null)" />
+            </section>
+        }
+        @if (Model.Solution?.Key == "hr")
+        {
+            <section id="workvibes-downloads" class="product-brochure" aria-labelledby="workvibes-downloads-title">
+                <div class="product-brochure-heading">
+                    <h2 id="workvibes-downloads-title">Downloads &amp; user guides</h2>
+                </div>
+                <dl class="product-feature-list">
+                    <div>
+                        <dt><i class="bi bi-phone" aria-hidden="true"></i> Android app</dt>
+                        <dd>Download the WorkVibes installer on your Android device. After installing, sign in with the account provided by your organisation.</dd>
+                        <dd class="product-brochure-actions">
+                            <a href="~/assets/downloads/workvibes/workvibes-android.apk" download>Download Android APK (82 MB) <i class="bi bi-download" aria-hidden="true"></i></a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt><i class="bi bi-book" aria-hidden="true"></i> Mobile app user guide</dt>
+                        <dd>Sign in with the account provided by your organisation. From Home, use <strong>Time In/Out</strong> to record attendance, <strong>Leave</strong> to request time off, and <strong>Expenses</strong> to submit claims.</dd>
+                        <dd class="product-brochure-actions">
+                            <a href="~/assets/guides/workvibes/workvibes-mobile-app-user-guide.pdf" target="_blank" rel="noopener" aria-label="View the mobile app user guide in a new tab">View in new tab <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                            <a href="~/assets/guides/workvibes/workvibes-mobile-app-user-guide.pdf" download aria-label="Download the mobile app user guide PDF">Download PDF <i class="bi bi-download" aria-hidden="true"></i></a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt><i class="bi bi-display" aria-hidden="true"></i> Web portal user guide</dt>
+                        <dd>Open the portal link provided by your organisation and sign in with your registered email address. Employees can review attendance, leave, expenses and payslips. Administrators can manage employee records and export timesheets.</dd>
+                        <dd class="product-brochure-actions">
+                            <a href="~/assets/guides/workvibes/workvibes-web-portal-user-guide.pdf" target="_blank" rel="noopener" aria-label="View the web portal user guide in a new tab">View in new tab <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                            <a href="~/assets/guides/workvibes/workvibes-web-portal-user-guide.pdf" download aria-label="Download the web portal user guide PDF">Download PDF <i class="bi bi-download" aria-hidden="true"></i></a>
+                        </dd>
+                    </div>
+                </dl>
             </section>
         }
         @if (hasSolution)

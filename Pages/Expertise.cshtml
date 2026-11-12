@@ -54,6 +54,23 @@
                     <div><dt><i class="bi bi-check2-circle" aria-hidden="true"></i>@area.Title</dt><dd>@area.Description</dd></div>
                 }
                 </dl>
+                @if (current.Key == "artificial-intelligence")
+                {
+                    var proposalUrl = Url.Content("~/assets/brochures/ai-powered-audit-solution.pdf");
+                    <section class="product-brochure" aria-labelledby="ai-audit-proposal-title">
+                        <div class="product-brochure-heading">
+                            <h3 id="ai-audit-proposal-title" class="h5 mb-0">AD.AI Audit Solution</h3>
+                        </div>
+                        <p>See how AD.AI can help auditors analyse data, retrieve information and prepare reports.</p>
+                        <a class="product-brochure-preview glightbox" href="~/assets/brochures/ai-powered-audit-solution.webp" target="_blank" rel="noopener" aria-label="Enlarge the AI-Powered Audit Solution preview">
+                            <img src="~/assets/brochures/ai-powered-audit-solution.webp" alt="AD.AI audit proposal diagram showing client access, AI tools, cloud processing and local backup" width="1920" height="1080" loading="lazy" asp-append-version="true">
+                        </a>
+                        <div class="product-brochure-actions">
+                            <a href="@proposalUrl" target="_blank" rel="noopener">View full-size proposal <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                            <a href="@proposalUrl" download>Download proposal <i class="bi bi-download" aria-hidden="true"></i></a>
+                        </div>
+                    </section>
+                }
                 <div class="product-enquiry">
                     <p>Tell us what you want to improve. We’ll work with you to clarify requirements, review your current systems and agree on a practical next step.</p>
                     <a href="/#contact-project" class="digital-btn">Discuss your project <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>

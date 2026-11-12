@@ -40,8 +40,8 @@ public class IndexModel : PageModel
     public IReadOnlyList<Service> Services => ServiceCatalogue;
     public static IReadOnlyList<Service> ServiceCatalogue { get; } = [
         new("01", "bi-robot", "Artificial Intelligence (AI)", "Put artificial intelligence to work on real business challenges.", "Explore AI assistants, knowledge search, document processing and workflow automation. We work with you to identify practical use cases, assess your data and integrate AI into your existing processes."),
-        new("02", "bi-code-square", "Software Customization Development", "Make your software fit the way your business works.", "Adapt existing applications, develop tailored features and connect your business systems. From workflow improvements to API integrations, we shape the solution around your requirements."),
-        new("03", "bi-diagram-3", "Digital Transformation", "Connect your people, processes and technology.", "Review your current systems, identify manual processes and plan how digital tools can improve the way your business works. Build a roadmap for connected workflows, automation and software improvements aligned with your business goals.")
+        new("02", "bi-code-square", "Custom Software Development", "Build a new application or add features to the software you already use.", "We design and build software around your day-to-day work. That can mean creating a new application, adding a feature to an existing system, or integrating systems so staff can enter information once and use it across tools."),
+        new("03", "bi-diagram-3", "Digital Transformation", "Get expert guidance on what to improve and where to start.", "Our digital transformation consultation helps you review how your team works, identify where manual work or duplication slows it down, and decide which changes to prioritise. Together, we outline a phased roadmap your team can use to plan the rollout.")
     ];
 
     public static IReadOnlyList<BusinessSolution> Catalogue { get; } = [

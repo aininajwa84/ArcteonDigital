@@ -1,6 +1,7 @@
 using System.Threading.RateLimiting;
 using Dewi.Email;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.AspNetCore.StaticFiles;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
@@ -22,7 +23,9 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
-app.UseStaticFiles();
+var contentTypes = new FileExtensionContentTypeProvider();
+contentTypes.Mappings[".apk"] = "application/vnd.android.package-archive";
+app.UseStaticFiles(new StaticFileOptions { ContentTypeProvider = contentTypes });
 app.UseRouting();
 app.UseRateLimiter();
 app.MapRazorPages();

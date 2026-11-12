@@ -13,10 +13,10 @@ public class ExpertiseModel : PageModel
     {
         "artificial-intelligence" => new("Compare supplier quotations faster",
             "When suppliers send quotations in different formats, AI can extract prices, delivery timelines and payment terms into a side-by-side summary. Your team can review the original quotations and decide which option best fits your needs."),
-        "software-customization" => new("Capture stock movements at the point of work",
+        "software-customization" => new("Record stock movements with barcode scanning",
             "If your inventory system relies on staff typing in product codes, we can build a barcode-scanning screen that records items as they arrive or leave. The screen can connect to your existing stock records so staff can check quantities without entering the same information twice."),
-        "digital-transformation" => new("Track approvals in one place",
-            "If your team tracks approvals across spreadsheets and email, we can help you plan a shared workflow where staff submit requests, see who needs to approve them, and check the status in one place."),
+        "digital-transformation" => new("Plan a better approval process",
+            "If your team tracks approvals across spreadsheets and email, we can map how purchase requests move today, identify where they get stuck and recommend a shared workflow. Your roadmap can show what to pilot first and what to check before expanding to other request types."),
         _ => null
     };
 
@@ -28,14 +28,14 @@ public class ExpertiseModel : PageModel
             new("Workflow automation and integration", "Plan how AI can support routine tasks and connect to your existing systems and processes.")
         ],
         "02" => [
-            new("Requirements and workflow design", "Review how your team works and define the changes your software needs to support."),
-            new("Custom features and applications", "Adapt existing applications or develop features around your business requirements."),
-            new("System and API integration", "Connect business systems and improve the flow of information between applications.")
+            new("Requirements and workflow design", "Define what users need to do, what information they need, and which workflows the software must support."),
+            new("Custom features and applications", "Build new applications or extend existing software with features such as forms, dashboards or reporting."),
+            new("System and API integration", "Connect applications through APIs so they can share records and reduce duplicate data entry.")
         ],
         "03" => [
             new("Process and system review", "Understand your current workflows, existing systems and opportunities to reduce manual work."),
-            new("Connected digital workflows", "Plan how digital tools, automation and system integration can connect teams and business processes."),
-            new("Transformation roadmap", "Prioritise improvements and define a phased approach around your business goals, scope and delivery requirements.")
+            new("Recommendations for digital workflows", "Evaluate where digital tools, automation or integration would help and recommend changes that fit your team’s needs."),
+            new("Transformation roadmap", "Set priorities, identify who should own each change and outline a phased rollout.")
         ],
         _ => []
     };
