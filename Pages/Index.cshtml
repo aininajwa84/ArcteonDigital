@@ -1,17 +1,19 @@
 @page "/"
 @model Dewi.Pages.IndexModel
 @{
+    ViewData["FullTitle"] = "Arcteon Digital | AI, Custom Software & Digital Transformation in Malaysia";
+    ViewData["Description"] = "Arcteon Digital is a Kuala Lumpur technology company providing AI solutions, custom software development and digital transformation consulting to help Malaysian businesses improve workflows.";
     ViewData["BodyClass"] = "index-page digital-home";
 }
 <main class="main">
     <section id="hero" class="digital-hero dark-background">
-        <img class="hero-photo" src="~/assets/img/computer-science-hero.jpg" alt="Programming source code displayed on a computer monitor">
+        <img class="hero-photo" src="~/assets/img/computer-science-hero.jpg" alt="Programming source code displayed on a computer monitor" fetchpriority="high" decoding="async" asp-append-version="true">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="container hero-content">
             <div class="row align-items-center gy-5">
                 <div class="col-lg-8">
                     <p class="eyebrow"><span></span> YOUR NEXT CHAPTER STARTS HERE</p>
-                    <h1>Better technology.<br>Stronger business.<br><em>Built together.</em></h1>
+                    <h1><span class="visually-hidden">Arcteon Digital: AI, custom software and digital transformation in Malaysia. </span>Better technology.<br>Stronger business.<br><em>Built together.</em></h1>
                     <p class="hero-intro">AI, software customization and digital transformation. Practical technology solutions shaped around your business, your workflows and your next move.</p>
                     <div class="hero-actions"><a class="digital-btn" href="#services">Explore our expertise <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
                 </div>

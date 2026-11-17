@@ -2,11 +2,55 @@
 @model Dewi.Pages.ServiceDetailsModel
 @{
     ViewData["Title"] = Model.Solution?.Title ?? "Our expertise";
+    if (Model.Solution is not null)
+        ViewData["Description"] = $"{Model.Solution.Title} by Arcteon Digital: {Model.Solution.Description}";
     ViewData["BodyClass"] = "service-details-page";
     var hasSolution = Model.Solution is not null;
     var logoOnlyBanner = Model.Solution?.Key is "clinic" or "queue" or "nexus";
     var detailContent = Model.DetailContent;
     var bannerImage = hasSolution ? Url.Content($"~/assets/img/{Model.DetailPhoto.File}") : null;
+}
+@functions {
+    static string ToJsonLd(object value) => System.Text.Json.JsonSerializer.Serialize(value,
+        new System.Text.Json.JsonSerializerOptions { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
+}
+@section StructuredData {
+    @if (Model.Solution is { } schemaSolution)
+    {
+        var siteUrl = (HttpContext.RequestServices.GetRequiredService<IConfiguration>()["Site:BaseUrl"] ?? $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}").TrimEnd('/');
+        var provider = new Dictionary<string, string> { ["@id"] = siteUrl + "/#organization" };
+        var entity = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = schemaSolution.IsClientSolution ? "Service" : "SoftwareApplication",
+            ["name"] = schemaSolution.Title,
+            ["description"] = schemaSolution.Description,
+            ["url"] = $"{siteUrl}/service-details?solution={Uri.EscapeDataString(schemaSolution.Key)}"
+        };
+        if (schemaSolution.IsClientSolution)
+        {
+            entity["provider"] = provider;
+            entity["areaServed"] = "MY";
+        }
+        else
+        {
+            entity["applicationCategory"] = "BusinessApplication";
+            entity["publisher"] = provider;
+        }
+        var breadcrumbs = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "BreadcrumbList",
+            ["itemListElement"] = new object[]
+            {
+                new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 1, ["name"] = "Home", ["item"] = siteUrl + "/" },
+                new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 2, ["name"] = "Solutions", ["item"] = siteUrl + "/#solutions" },
+                new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 3, ["name"] = schemaSolution.Title }
+            }
+        };
+        <script type="application/ld+json">@Html.Raw(ToJsonLd(entity))</script>
+        <script type="application/ld+json">@Html.Raw(ToJsonLd(breadcrumbs))</script>
+    }
 }
 <main class="main @(hasSolution ? "product-details-refined" : "")">
     <div class="page-title dark-background" style="@(hasSolution ? $"background-image: url('{bannerImage}')" : null)">

@@ -20,6 +20,26 @@ public class ExpertiseModel : PageModel
         _ => null
     };
 
+    public IReadOnlyList<(string Question, string Answer)> Faqs => CurrentService.Key switch
+    {
+        "artificial-intelligence" => [
+            ("What can AI do for my business?", "AI can support tasks such as knowledge search, document processing, assistants and workflow automation. We start by identifying practical use cases and reviewing your data before recommending where to begin."),
+            ("Do I need to replace my existing systems to use AI?", "No. We plan how AI can connect to your existing systems and processes, so your team can keep working in the tools it already uses."),
+            ("How do we get started?", "Tell us about your workflow and the work you want to simplify. Scope, integrations and delivery timelines are confirmed during discovery.")
+        ],
+        "software-customization" => [
+            ("Can you add features to software we already use?", "Yes. We can build a new application, extend an existing system with features such as forms, dashboards or reporting, or connect systems through APIs so staff enter information once."),
+            ("How do you decide what to build?", "We begin with requirements and workflow design: what users need to do, what information they need and which workflows the software must support."),
+            ("How long does a custom software project take?", "Scope, integrations and delivery timelines are confirmed during discovery, once we understand your requirements.")
+        ],
+        "digital-transformation" => [
+            ("What does a digital transformation consultation involve?", "We review how your team works, identify where manual work or duplication slows it down and decide which changes to prioritise. Together we outline a phased roadmap for the rollout."),
+            ("Do we need to change everything at once?", "No. The roadmap is phased. It sets priorities and shows what to pilot first and what to check before expanding."),
+            ("Who is this for?", "Businesses whose teams track work across spreadsheets, email or disconnected systems and want to know where to start.")
+        ],
+        _ => []
+    };
+
     public IReadOnlyList<ServiceArea> Areas => CurrentService.Number switch
     {
         "01" => [

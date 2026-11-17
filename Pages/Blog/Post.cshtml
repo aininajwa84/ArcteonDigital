@@ -1,0 +1,137 @@
+@page "/blog/{slug}"
+@using Dewi.Pages
+@using Dewi.Seo
+@inject BlogStore Blog
+@functions {
+    public BlogPost? Post { get; private set; }
+
+    public IActionResult OnGet(string slug)
+    {
+        Post = Blog.FindPublished(slug);
+        return Post is null ? NotFound() : Page();
+    }
+
+    static string ToJsonLd(object value) => System.Text.Json.JsonSerializer.Serialize(value,
+        new System.Text.Json.JsonSerializerOptions { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
+}
+@{
+    var post = Post!;
+    var published = post.PublishedUtc ?? post.CreatedUtc;
+    ViewData["Title"] = post.Title;
+    ViewData["Description"] = post.Description;
+    ViewData["BodyClass"] = "service-details-page";
+}
+@section StructuredData {
+    @{
+        var siteUrl = (HttpContext.RequestServices.GetRequiredService<IConfiguration>()["Site:BaseUrl"] ?? $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}").TrimEnd('/');
+        var article = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "Article",
+            ["headline"] = post.Title,
+            ["description"] = post.Description,
+            ["datePublished"] = published.ToString("O"),
+            ["dateModified"] = published.ToString("O"),
+            ["mainEntityOfPage"] = $"{siteUrl}/blog/{post.Slug}",
+            ["author"] = new Dictionary<string, string> { ["@id"] = siteUrl + "/#organization" },
+            ["publisher"] = new Dictionary<string, string> { ["@id"] = siteUrl + "/#organization" }
+        };
+        var breadcrumbs = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "BreadcrumbList",
+            ["itemListElement"] = new object[]
+            {
+                new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 1, ["name"] = "Home", ["item"] = siteUrl + "/" },
+                new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 2, ["name"] = "Insights", ["item"] = siteUrl + "/blog" },
+                new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 3, ["name"] = post.Title }
+            }
+        };
+    }
+    <script type="application/ld+json">@Html.Raw(ToJsonLd(article))</script>
+    <script type="application/ld+json">@Html.Raw(ToJsonLd(breadcrumbs))</script>
+    @if (post.Faqs.Count > 0)
+    {
+        var faqPage = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "FAQPage",
+            ["mainEntity"] = post.Faqs.Select(f => new Dictionary<string, object>
+            {
+                ["@type"] = "Question",
+                ["name"] = f.Question,
+                ["acceptedAnswer"] = new Dictionary<string, string> { ["@type"] = "Answer", ["text"] = f.Answer }
+            }).ToArray()
+        };
+        <script type="application/ld+json">@Html.Raw(ToJsonLd(faqPage))</script>
+    }
+}
+<main class="main product-details-refined">
+    <div class="page-title dark-background" style="background-image: url('/assets/img/digital-business-workflow.jpg')">
+        <div class="container position-relative">
+            <p class="eyebrow">INSIGHTS / ARCTEON DIGITAL</p>
+            <h1>@post.Title</h1>
+            <p>@post.Description</p>
+            <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog">Insights</a></li><li class="current">@post.Title</li></ol></nav>
+        </div>
+    </div>
+    <section class="section solution-detail">
+        <div class="container"><div class="row gy-5 gx-lg-5">
+            <aside class="col-lg-4">
+                <div class="product-detail-sidebar">
+                    <nav class="product-sidebar-nav" aria-labelledby="blog-services-title">
+                        <h2 id="blog-services-title">Our Services</h2>
+                        <ul>
+                        @foreach (var service in IndexModel.ServiceCatalogue)
+                        {
+                            <li><a asp-page="/Expertise" asp-route-service="@service.Key"><i class="bi @service.Icon" aria-hidden="true"></i><span>@service.Title</span></a></li>
+                        }
+                        </ul>
+                    </nav>
+                    <div class="product-sidebar-contact">
+                        <i class="bi bi-headset" aria-hidden="true"></i>
+                        <h2>Have a question?</h2>
+                        <p>Talk to us about your business requirements.</p>
+                        <a href="tel:+60392268079">+603 9226 8079</a>
+                        <a href="mailto:enquiry@arcteondigital.com.my">enquiry@arcteondigital.com.my</a>
+                    </div>
+                </div>
+            </aside>
+            <article class="col-lg-8 product-detail-content">
+                <p><small>@published.ToString("d MMMM yyyy")</small></p>
+                @foreach (var part in post.Sections)
+                {
+                    <h2 class="product-content-title">@part.Heading</h2>
+                    @foreach (var paragraph in part.Paragraphs)
+                    {
+                        <p>@paragraph</p>
+                    }
+                    @if (part.Bullets.Count > 0)
+                    {
+                        <ul>
+                            @foreach (var bullet in part.Bullets)
+                            {
+                                <li>@bullet</li>
+                            }
+                        </ul>
+                    }
+                }
+                @if (post.Faqs.Count > 0)
+                {
+                    <section class="product-faq" aria-labelledby="blog-faq-title">
+                        <h2 id="blog-faq-title">Frequently asked questions</h2>
+                        @foreach (var faq in post.Faqs)
+                        {
+                            <details><summary>@faq.Question</summary><p>@faq.Answer</p></details>
+                        }
+                    </section>
+                }
+                <div class="product-enquiry">
+                    <p>Tell us what you want to improve. We’ll work with you to clarify requirements, review your current systems and agree on a practical next step.</p>
+                    <a href="/#contact-project" class="digital-btn">Discuss your project <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                    <p class="product-scope-note">Scope, integrations and delivery timelines are confirmed during discovery.</p>
+                </div>
+            </article>
+        </div></div>
+    </section>
+</main>

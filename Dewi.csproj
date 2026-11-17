@@ -8,8 +8,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Update="appsettings.Development.json" CopyToPublishDirectory="Never" />
+    <!-- Generated blog posts are runtime data: never ship the developer's local drafts to the server. -->
+    <Content Remove="App_Data\**" />
+    <None Remove="App_Data\**" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Anthropic" Version="13.9.0" />
     <PackageReference Include="MailKit" Version="4.18.1" />
     <!-- Use the patched version of MimeKit's PKCS dependency. -->
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />

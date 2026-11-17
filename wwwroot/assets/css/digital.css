@@ -217,3 +217,11 @@ a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px soli
 .product-brochure-preview { display: block; overflow: hidden; border: 1px solid #dce5e6; border-radius: 10px; background: #fff; cursor: zoom-in; }
 .product-brochure-preview img { display: block; width: 100%; height: auto; }
 .solution-detail .product-brochure-caption { color: #62747d; font-size: 12px; line-height: 1.7; margin: 10px 0 0; }
+
+/* Service page FAQ */
+.product-faq { margin: 40px 0 8px; }
+.product-faq h2 { font-size: 22px; margin-bottom: 16px; }
+.product-faq details { border-bottom: 1px solid rgba(127, 127, 127, .25); padding: 14px 0; }
+.product-faq summary { cursor: pointer; font-weight: 600; list-style-position: outside; }
+.product-faq details[open] summary { color: var(--accent-color); }
+.product-faq details p { margin: 10px 0 0; }

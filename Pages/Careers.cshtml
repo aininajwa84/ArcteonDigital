@@ -1,4 +1,18 @@
 @page "/careers"
 @{
-    Response.Redirect(Url.Content("~/#careers"));
+    ViewData["Title"] = "Careers & Internships";
+    ViewData["Description"] = "Explore internships and software careers at Arcteon Digital in Kuala Lumpur: software development, AI and automation. Introduce yourself and tell us where you want to grow.";
+    ViewData["BodyClass"] = "service-details-page";
 }
+<main class="main">
+    <div class="page-title dark-background" style="background-image: url('/assets/img/digital-business-workflow.jpg')">
+        <div class="container position-relative">
+            <p class="eyebrow">CAREERS / ARCTEON DIGITAL</p>
+            <h1>Careers &amp; Internships in Kuala Lumpur</h1>
+            <p>Join a Malaysian technology team working on AI, custom software and digital transformation.</p>
+            <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li class="current" aria-current="page">Careers</li></ol></nav>
+        </div>
+    </div>
+    <partial name="_CareersSection" />
+</main>
+<partial name="_CareerApplication" />

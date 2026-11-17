@@ -1,0 +1,42 @@
+@page "/blog"
+@using Dewi.Seo
+@inject BlogStore Blog
+@{
+    ViewData["Title"] = "Insights";
+    ViewData["Description"] = "Practical articles from Arcteon Digital on AI, custom software and digital transformation for Malaysian businesses.";
+    ViewData["BodyClass"] = "service-details-page";
+    var posts = Blog.Published();
+}
+<main class="main product-details-refined">
+    <div class="page-title dark-background" style="background-image: url('/assets/img/digital-business-workflow.jpg')">
+        <div class="container position-relative">
+            <p class="eyebrow">ARCTEON DIGITAL</p>
+            <h1>Insights</h1>
+            <p>Practical articles on AI, custom software and digital transformation for businesses in Malaysia.</p>
+            <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li class="current">Insights</li></ol></nav>
+        </div>
+    </div>
+    <section class="section solution-detail">
+        <div class="container">
+            @if (posts.Count == 0)
+            {
+                <p>New articles are coming soon.</p>
+            }
+            else
+            {
+                <div class="row gy-4">
+                @foreach (var post in posts)
+                {
+                    <div class="col-lg-6">
+                        <article class="service-example h-100">
+                            <h2 class="h4"><a href="/blog/@post.Slug">@post.Title</a></h2>
+                            <p>@post.Description</p>
+                            <p><small>@((post.PublishedUtc ?? post.CreatedUtc).ToString("d MMMM yyyy"))</small></p>
+                        </article>
+                    </div>
+                }
+                </div>
+            }
+        </div>
+    </section>
+</main>

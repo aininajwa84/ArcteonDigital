@@ -3,7 +3,53 @@
 @{
     var current = Model.CurrentService;
     ViewData["Title"] = current.Title;
+    ViewData["Description"] = $"{current.Description} {current.Detail}";
     ViewData["BodyClass"] = "service-details-page";
+}
+@functions {
+    static string ToJsonLd(object value) => System.Text.Json.JsonSerializer.Serialize(value,
+        new System.Text.Json.JsonSerializerOptions { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
+}
+@section StructuredData {
+    @{
+        var siteUrl = (HttpContext.RequestServices.GetRequiredService<IConfiguration>()["Site:BaseUrl"] ?? $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}").TrimEnd('/');
+        var service = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "Service",
+            ["name"] = current.Title,
+            ["description"] = current.Description,
+            ["areaServed"] = "MY",
+            ["provider"] = new Dictionary<string, string> { ["@id"] = siteUrl + "/#organization" }
+        };
+        var breadcrumbs = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "BreadcrumbList",
+            ["itemListElement"] = new object[]
+            {
+                new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 1, ["name"] = "Home", ["item"] = siteUrl + "/" },
+                new Dictionary<string, object> { ["@type"] = "ListItem", ["position"] = 2, ["name"] = current.Title }
+            }
+        };
+    }
+    <script type="application/ld+json">@Html.Raw(ToJsonLd(service))</script>
+    <script type="application/ld+json">@Html.Raw(ToJsonLd(breadcrumbs))</script>
+    @if (Model.Faqs.Count > 0)
+    {
+        var faqPage = new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@type"] = "FAQPage",
+            ["mainEntity"] = Model.Faqs.Select(f => new Dictionary<string, object>
+            {
+                ["@type"] = "Question",
+                ["name"] = f.Question,
+                ["acceptedAnswer"] = new Dictionary<string, string> { ["@type"] = "Answer", ["text"] = f.Answer }
+            }).ToArray()
+        };
+        <script type="application/ld+json">@Html.Raw(ToJsonLd(faqPage))</script>
+    }
 }
 <main class="main product-details-refined">
     <div class="page-title dark-background" style="background-image: url('/assets/img/digital-business-workflow.jpg')">
@@ -66,6 +112,16 @@
                             <img src="@brochureUrl" alt="AD.AI brochure showing the solution overview, how it works and key benefits" width="1264" height="842" loading="lazy" asp-append-version="true">
                         </a>
                         <partial name="_BrochureActions" model="(brochureUrl, (string?)null)" />
+                    </section>
+                }
+                @if (Model.Faqs.Count > 0)
+                {
+                    <section class="product-faq" aria-labelledby="service-faq-title">
+                        <h2 id="service-faq-title">Frequently asked questions</h2>
+                        @foreach (var faq in Model.Faqs)
+                        {
+                            <details><summary>@faq.Question</summary><p>@faq.Answer</p></details>
+                        }
                     </section>
                 }
                 <div class="product-enquiry">
