@@ -42,10 +42,28 @@ public static class SeoAdmin
         g.MapGet("/posts/{slug}", (string slug, BlogStore store) =>
             store.Find(slug) is { } post ? Html(Detail(post)) : Results.NotFound());
 
-        g.MapPost("/run", (SeoAgent agent, IHostApplicationLifetime life) =>
+        g.MapPost("/run", async (HttpContext http, SeoAgent agent, IHostApplicationLifetime life) =>
         {
-            _ = Task.Run(() => agent.RunOnceAsync(manual: true, life.ApplicationStopping));
-            return Results.Redirect("/admin/seo?msg=" + Uri.EscapeDataString("Run started. Refresh in a minute or two."));
+            var form = await http.Request.ReadFormAsync();
+            var keyword = form["keyword"].ToString();
+            // Not wrapped in Task.Run: the run takes its lock before the first await, so IsRunning is already true when the page reloads.
+            _ = agent.RunOnceAsync(manual: true, life.ApplicationStopping, keyword);
+            return Results.Redirect("/admin/seo?msg=" + Uri.EscapeDataString("Run started. This page refreshes itself until the article is ready."));
+        });
+
+        g.MapPost("/keywords", async (HttpContext http, BlogStore store) =>
+        {
+            var form = await http.Request.ReadFormAsync();
+            var lines = form["keywords"].ToString().Split(['\r', '\n', ','], StringSplitOptions.RemoveEmptyEntries);
+            var added = store.AddKeywords(lines);
+            return Results.Redirect("/admin/seo?msg=" + Uri.EscapeDataString(added == 0 ? "No new keywords added." : $"Added {added} keyword(s)."));
+        });
+
+        g.MapPost("/keywords/remove", async (HttpContext http, BlogStore store) =>
+        {
+            var form = await http.Request.ReadFormAsync();
+            store.RemoveKeyword(form["keyword"].ToString());
+            return Results.Redirect("/admin/seo?msg=Keyword%20removed");
         });
 
         g.MapPost("/pause", (BlogStore store) => { store.IsPaused = true; return Results.Redirect("/admin/seo?msg=Paused"); });
@@ -98,7 +116,9 @@ public static class SeoAdmin
         "<style>body{font:15px/1.5 system-ui,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;color:#1a1a1a}" +
         "table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:.5rem;text-align:left;vertical-align:top}" +
         "button{padding:.3rem .7rem;margin:0 .2rem .2rem 0;cursor:pointer}.held{color:#b45309}.pub{color:#15803d}" +
-        ".msg{background:#eef6ff;padding:.6rem 1rem;border-radius:6px}form{display:inline}</style>" + body,
+        ".msg{background:#eef6ff;padding:.6rem 1rem;border-radius:6px}form{display:inline}button:disabled{cursor:wait;opacity:.6}" +
+        ".spin{display:inline-block;width:.9em;height:.9em;margin-right:.6em;border:2px solid #93c5fd;border-top-color:#1d4ed8;border-radius:50%;animation:s 1s linear infinite;vertical-align:-.1em}@keyframes s{to{transform:rotate(360deg)}}</style>" +
+        "<script>document.addEventListener('submit',e=>{const b=e.target.querySelector('button');if(b){setTimeout(()=>{b.disabled=true;b.textContent='Please wait...'},0)}})</script>" + body,
         "text/html; charset=utf-8");
 
     private static string E(string? s) => WebUtility.HtmlEncode(s ?? "");
@@ -109,8 +129,9 @@ public static class SeoAdmin
         if (msg.Length > 0) sb.Append($"<p class=msg>{E(msg)}</p>");
         sb.Append($"<p>Status: <b>{(!s.Enabled ? "disabled in settings" : store.IsPaused ? "paused" : "running")}</b> &middot; {E(model.Name)}{(model.HasCredentials ? "" : " <b>(no API key set)</b>")} &middot; " +
                   $"max {s.MaxPostsPerWeek}/week &middot; auto-publish {(s.AutoPublish ? "on" : "off")}</p>");
+        if (agent.IsRunning) sb.Append("<meta http-equiv=refresh content=8><script>document.addEventListener('DOMContentLoaded',()=>document.querySelectorAll('form[action$=\"/run\"] button').forEach(b=>{b.disabled=true;b.textContent='Writing...'}))</script>");
         sb.Append(agent.IsRunning
-            ? "<p class=msg><b>A run is in progress.</b> It can take several minutes. Refresh this page to check.</p>"
+            ? "<p class='msg running'><span class=spin></span><b>Writing an article...</b> This can take a few minutes. The page refreshes by itself every 8 seconds.</p>"
             : agent.LastResult is { } last
                 ? $"<p>Last run ({agent.LastResultUtc:yyyy-MM-dd HH:mm} UTC): <b>{E(last)}</b></p>"
                 : "<p>No run since the site started.</p>");
@@ -118,8 +139,30 @@ public static class SeoAdmin
         sb.Append(store.IsPaused
             ? "<form method=post action=/admin/seo/resume><button>Resume worker</button></form>"
             : "<form method=post action=/admin/seo/pause><button>Pause worker (kill switch)</button></form>");
-        var next = s.Keywords.FirstOrDefault(k => store.All().All(p => !string.Equals(p.Keyword, k, StringComparison.OrdinalIgnoreCase)));
-        sb.Append($"<p>Next keyword: <b>{E(next ?? "none left")}</b></p>");
+        var used = store.All().Select(p => p.Keyword).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var added = store.AddedKeywords();
+        var pending = added.Concat(s.Keywords).Where(k => !string.IsNullOrWhiteSpace(k) && !used.Contains(k))
+            .Distinct(StringComparer.OrdinalIgnoreCase).ToList();
+        sb.Append($"<p>Next keyword: <b>{E(pending.FirstOrDefault() ?? "none left")}</b></p>");
+
+        sb.Append("<h2>Keywords</h2>");
+        sb.Append("<form method=post action=/admin/seo/keywords><p><textarea name=keywords rows=3 cols=60 placeholder='One keyword or phrase per line, e.g. payroll software Malaysia'></textarea></p>" +
+                  "<button>Add keywords</button></form>");
+        sb.Append("<p><small>The AI writes an article for each keyword using the facts about this website. Waiting to be written:</small></p>");
+        if (pending.Count == 0) sb.Append("<p><i>None. Add a keyword above.</i></p>");
+        else
+        {
+            sb.Append("<table>");
+            foreach (var k in pending)
+            {
+                sb.Append($"<tr><td>{E(k)}</td><td><form method=post action=/admin/seo/run><input type=hidden name=keyword value='{E(k)}'><button>Write now</button></form>");
+                if (added.Contains(k, StringComparer.OrdinalIgnoreCase))
+                    sb.Append($"<form method=post action=/admin/seo/keywords/remove><input type=hidden name=keyword value='{E(k)}'><button>Remove</button></form>");
+                sb.Append("</td></tr>");
+            }
+            sb.Append("</table>");
+        }
+        sb.Append("<h2>Articles</h2>");
         sb.Append("<table><tr><th>Title</th><th>Status</th><th>Created</th><th></th></tr>");
         foreach (var p in store.All())
         {

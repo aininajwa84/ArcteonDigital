@@ -43,6 +43,49 @@ public sealed class BlogStore
         }
     }
 
+    private string KeywordsFile => Path.Combine(_dir, "keywords.txt");
+
+    /// <summary>Keywords added from the admin page (one per line in keywords.txt).</summary>
+    public IReadOnlyList<string> AddedKeywords()
+    {
+        lock (_lock) return ReadKeywords();
+    }
+
+    /// <summary>Adds keywords, ignoring blanks and duplicates. Returns how many were new.</summary>
+    public int AddKeywords(IEnumerable<string> keywords)
+    {
+        lock (_lock)
+        {
+            var list = ReadKeywords();
+            var added = 0;
+            foreach (var raw in keywords)
+            {
+                var k = string.Join(' ', raw.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
+                if (k.Length is 0 or > 120) continue;
+                if (list.Contains(k, StringComparer.OrdinalIgnoreCase)) continue;
+                list.Add(k);
+                added++;
+            }
+            if (added > 0) File.WriteAllLines(KeywordsFile, list);
+            return added;
+        }
+    }
+
+    public void RemoveKeyword(string keyword)
+    {
+        lock (_lock)
+        {
+            var list = ReadKeywords();
+            if (list.RemoveAll(k => string.Equals(k, keyword, StringComparison.OrdinalIgnoreCase)) > 0)
+                File.WriteAllLines(KeywordsFile, list);
+        }
+    }
+
+    private List<string> ReadKeywords() =>
+        File.Exists(KeywordsFile)
+            ? File.ReadAllLines(KeywordsFile).Select(l => l.Trim()).Where(l => l.Length > 0).ToList()
+            : [];
+
     public IReadOnlyList<BlogPost> All()
     {
         lock (_lock) return _posts.OrderByDescending(p => p.CreatedUtc).ToList();

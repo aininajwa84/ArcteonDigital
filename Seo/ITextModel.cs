@@ -17,6 +17,9 @@ public interface ITextModel
 /// <summary>The provider is overloaded or rate-limited (HTTP 429 or 5xx). Worth retrying after a wait.</summary>
 public sealed class ModelBusyException(string message) : InvalidOperationException(message);
 
+/// <summary>The model replied, but not with JSON that fits the expected shape. Worth a quick retry.</summary>
+public sealed class MalformedModelOutputException(string message) : InvalidOperationException(message);
+
 public static class TextModelExtensions
 {
     private static readonly JsonSerializerOptions Json = new(JsonSerializerDefaults.Web);
@@ -35,6 +38,10 @@ public static class TextModelExtensions
             {
                 await Task.Delay(TimeSpan.FromSeconds(30 * attempt), ct);
             }
+            catch (MalformedModelOutputException) when (attempt < 3)
+            {
+                // Models occasionally return truncated or mis-shaped JSON; a fresh attempt usually works.
+            }
         }
     }
 
@@ -49,9 +56,9 @@ public static class TextModelExtensions
             return JsonSerializer.Deserialize<T>(text[start..(end + 1)], Json)
                 ?? throw new InvalidOperationException("The model returned empty JSON.");
         }
-        catch (JsonException)
+        catch (JsonException ex)
         {
-            throw new InvalidOperationException("The model returned JSON in an unexpected shape.");
+            throw new MalformedModelOutputException("The model returned JSON in an unexpected shape (" + ex.Message + ").");
         }
     }
 }

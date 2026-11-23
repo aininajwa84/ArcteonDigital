@@ -18,10 +18,18 @@ public sealed class SeoAgent(
     public bool IsRunning => _gate.CurrentCount == 0;
 
     /// <param name="manual">True when started from the admin page: skips the weekly cap and held-draft limit.</param>
-    public async Task<string> RunOnceAsync(bool manual, CancellationToken ct)
+    /// <summary>Keywords added on the admin page come first, then Seo:Keywords from settings; those that already have an article are skipped.</summary>
+    public static string? NextKeyword(BlogStore store, SeoSettings settings)
+    {
+        var used = store.All().Select(p => p.Keyword).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        return store.AddedKeywords().Concat(settings.Keywords)
+            .FirstOrDefault(k => !string.IsNullOrWhiteSpace(k) && !used.Contains(k));
+    }
+
+    public async Task<string> RunOnceAsync(bool manual, CancellationToken ct, string? keywordOverride = null)
     {
         logger.LogInformation("SEO run requested ({Source}).", manual ? "manual" : "scheduled");
-        var result = await RunCoreAsync(manual, ct);
+        var result = await RunCoreAsync(manual, ct, keywordOverride);
         if (!result.StartsWith("Skipped: a run is already", StringComparison.Ordinal))
         {
             LastResult = result;
@@ -31,7 +39,7 @@ public sealed class SeoAgent(
         return result;
     }
 
-    private async Task<string> RunCoreAsync(bool manual, CancellationToken ct)
+    private async Task<string> RunCoreAsync(bool manual, CancellationToken ct, string? keywordOverride)
     {
         var settings = options.Value;
         if (!settings.Enabled) return "Skipped: Seo:Enabled is false.";
@@ -49,9 +57,8 @@ public sealed class SeoAgent(
                     return "Skipped: too many held drafts waiting for review.";
             }
 
-            var used = all.Select(p => p.Keyword).ToHashSet(StringComparer.OrdinalIgnoreCase);
-            var keyword = settings.Keywords.FirstOrDefault(k => !string.IsNullOrWhiteSpace(k) && !used.Contains(k));
-            if (keyword is null) return "Skipped: every keyword already has an article. Add more in Seo:Keywords.";
+            var keyword = string.IsNullOrWhiteSpace(keywordOverride) ? NextKeyword(store, settings) : keywordOverride.Trim();
+            if (keyword is null) return "Skipped: every keyword already has an article. Add more keywords on the SEO admin page.";
 
             var post = await pipeline.GenerateAsync(keyword, ct);
             return $"{(post.Status == PostStatus.Published ? "Published" : "Held for review")}: {post.Title}";
