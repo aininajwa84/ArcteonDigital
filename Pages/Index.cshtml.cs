@@ -12,14 +12,18 @@ public record Service(string Number, string Icon, string Title, string Descripti
         _ => throw new InvalidOperationException("Unknown service")
     };
 }
-public record BusinessSolution(string Key, string Icon, string Category, string Title, string Description, string[] Features, string LogoClass)
+public record BusinessSolution(string Key, string Icon, string Category, string Title, string Description, string[] Features, string LogoClass, string? WebsiteUrl = null)
 {
+    public bool OpensExternalSite => !string.IsNullOrWhiteSpace(WebsiteUrl);
+    public string Href => WebsiteUrl ?? $"/service-details?solution={Uri.EscapeDataString(Key)}";
+    public string CallToAction => OpensExternalSite ? "Visit website" : IsClientSolution ? "Explore client solution" : "Explore product";
     public bool IsClientSolution => Key is "tender" or "rappovena";
     public string LogoAlt => Key == "clinic" ? "ArcteonMed logo" : $"{Title} logo";
     public string? BannerLogoFile => Key switch
     {
         "queue" => "byondq-banner-source.png",
         "nexus" => "arcteon-nexus-wordmark-light.svg",
+        "adai" => "ad-ai-logo-light.png",
         _ => LogoFile
     };
     public string? LogoFile => Key switch
@@ -29,6 +33,7 @@ public record BusinessSolution(string Key, string Icon, string Category, string 
         "assets" => "sep-symbol-transparent.png",
         "queue" => "byondq-logo.png",
         "nexus" => "arcteon-nexus-wordmark.svg",
+        "adai" => "ad-ai-logo.jpeg",
         "tender" => "tender-transparent.png",
         "rappovena" => "rappovena-transparent.png",
         _ => null
@@ -51,7 +56,8 @@ public class IndexModel : PageModel
         new("tender", "bi-diagram-3", "AI WORKFLOW PROCESSING & AUTOMATION", "Tender Quotation Management System", "AI workflow processing and automation for a client’s tender, quotation and procurement processes.", ["AI workflow processing", "Tender and quotation automation", "Procurement coordination"], "product-tender"),
         new("rappovena", "bi-globe2", "WEBSITE DEVELOPMENT", "RappoVena Website", "A corporate website developed for RappoVena, a medical supplier, to present its business online.", ["Corporate website development", "Business information", "Online presence"], "product-rappovena"),
         new("queue", "bi-person-lines-fill", "QUEUE MANAGEMENT SYSTEM", "ByondQ", "Organize customer flow, service queues and ticket operations.", ["Customer flow coordination", "Service queue management", "Ticket operations"], "product-queue"),
-        new("nexus", "bi-boxes", "BUSINESS TRANSFORMATION PLATFORM", "Arcteon Nexus", "Connect documents, customers, inventory, online sales and approval workflows in one modular platform.", ["Document Management", "CRM System", "Inventory System", "E-Commerce Platform", "Workflow Automation"], "product-nexus")
+        new("nexus", "bi-boxes", "BUSINESS TRANSFORMATION PLATFORM", "Arcteon Nexus", "Connect documents, customers, inventory, online sales and approval workflows in one modular platform.", ["Document Management", "CRM System", "Inventory System", "E-Commerce Platform", "Workflow Automation"], "product-nexus"),
+        new("adai", "bi-cpu", "AI-POWERED AUDIT SOLUTION", "AD.AI", "AI-powered audit tools for analysing data, finding information and preparing reports.", ["Audit data analysis", "AI-assisted document search", "Secure cloud and local backup"], "product-adai")
     ];
     public IReadOnlyList<BusinessSolution> Solutions => Catalogue;
     public IReadOnlyList<BusinessSolution> Products => Catalogue.Where(item => !item.IsClientSolution).ToArray();

@@ -45,6 +45,7 @@ public class ServiceDetailsModel : PageModel
             "Plan how customers move through your service process, from arrival to the appropriate service point.",
             "Organize queue handling around your counters, service types and operational needs.",
             "Support the ticket processes your team uses to coordinate customers and service queues."]),
+        "adai" => new("Smarter audit work with AD.AI.", "Tell us how your audit team manages data and reporting. We can discuss how AD.AI could support your workflow.", ["Analyse audit data and bring key findings into a clearer view.", "Search and process documents with AI-assisted tools to find relevant information.", "Use a secure cloud workspace with local backup options for business continuity."]),
         "nexus" => new("Connect your business, one module at a time.", "Tell us which business process you want to improve first. We’ll discuss the right starting module and how to connect your next workflow.", [
             "Convert paper documents into searchable digital records. Find files by name, date or reference, use AI to find information faster and access records securely through the cloud.",
             "Keep customer details and history together, track enquiries and sales progress, and set reminders for follow-up.",
@@ -62,6 +63,7 @@ public class ServiceDetailsModel : PageModel
         "rappovena" => ("digital-business-workflow.jpg", "Colleagues reviewing work together on a laptop"),
         "queue" => ("workplace-planning.jpg", "Colleagues in hijabs presenting workflow data beside laptops"),
         "nexus" => ("digital-business-workflow.jpg", "Colleagues reviewing business information on a laptop"),
+        "adai" => ("digital-business-workflow.jpg", "Audit team reviewing digital information on a computer"),
         _ => ("it-team-collaboration.jpg", "Colleagues collaborating at a computer in a technology workspace")
     };
     public IActionResult OnGet(string? solution)

@@ -336,14 +336,10 @@
 .product-sidebar-nav .sidebar-group-title { color: #607783; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin: 18px 0 11px; }
 .product-sidebar-nav #product-sidebar-links ul { padding-top: 0; }
 @media (min-width: 992px) {
-  .products-enhanced .owned-product-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .products-enhanced .owned-product-grid > .solution-card { grid-column: span 2; }
-  .products-enhanced .owned-product-grid > .solution-card:nth-child(4) { grid-column: 2 / span 2; }
-  .products-enhanced .owned-product-grid > .solution-card:nth-child(5) { grid-column: 4 / span 2; }
+  .products-enhanced .owned-product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (min-width: 576px) and (max-width: 991px) {
   .products-enhanced .owned-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .products-enhanced .owned-product-grid > .solution-card:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 9px); justify-self: center; }
 }
 @media (max-width: 575px) { .products-enhanced .client-solution-grid { grid-template-columns: minmax(0, 1fr); } }
 
@@ -361,6 +357,8 @@
 .product-logo-image.product-logo-assets { width: 220px; height: 130px; }
 .product-logo-image.product-logo-queue { width: 140px; height: 70px; }
 .product-logo-image.product-logo-nexus { width: 190px; height: 100px; }
+.product-logo-image.product-logo-adai { width: 250px; height: 102px; }
+.product-banner-image.product-logo-adai { width: 360px; height: 126px; max-width: 42%; }
 .product-banner-image { flex-shrink: 0; max-width: 38%; }
 .product-banner-brand.product-banner-brand-stacked { flex-direction: column; gap: 6px; }
 .product-banner-subtitle { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; padding: 6px 13px; border: 1px solid #ffc4a67a; border-radius: 999px; background: #0d2434; color: #ffc4a6; font-size: 16px; font-weight: 700; line-height: 1.4; }
@@ -391,6 +389,7 @@
   .product-banner-image.product-logo-hr { width: 76px; height: 76px; }
   .product-banner-image.product-logo-clinic { height: 85px; }
   .product-banner-image.product-logo-assets { width: 82px; height: 61px; }
+  .product-banner-image.product-logo-adai { width: min(78vw, 320px); height: auto; max-width: 78vw; }
   .products-enhanced .solution-card h3 { min-height: 0; }
 }
 

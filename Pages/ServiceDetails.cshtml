@@ -6,7 +6,7 @@
         ViewData["Description"] = $"{Model.Solution.Title} by Arcteon Digital: {Model.Solution.Description}";
     ViewData["BodyClass"] = "service-details-page";
     var hasSolution = Model.Solution is not null;
-    var logoOnlyBanner = Model.Solution?.Key is "clinic" or "queue" or "nexus";
+    var logoOnlyBanner = Model.Solution?.Key is "clinic" or "queue" or "nexus" or "adai";
     var detailContent = Model.DetailContent;
     var bannerImage = hasSolution ? Url.Content($"~/assets/img/{Model.DetailPhoto.File}") : null;
 }
