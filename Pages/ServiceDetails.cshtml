@@ -205,7 +205,15 @@
         }
         @if (hasSolution)
         {
-            <div class="product-enquiry"><p>@detailContent.Enquiry</p><a href="/#contact-project" class="digital-btn">@(Model.Solution!.IsClientSolution ? "Discuss a similar project" : $"Enquire about {Model.Solution.Title}") <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><p class="product-scope-note">Features, integrations and delivery timelines are confirmed during discovery.</p></div>
+            <div class="product-enquiry">
+                <p>@detailContent.Enquiry</p>
+                <a href="/#contact-project" class="digital-btn">@(Model.Solution!.IsClientSolution ? "Discuss a similar project" : $"Enquire about {Model.Solution.Title}") <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                @if (Model.Solution?.Key == "adai")
+                {
+                    <a href="https://arcteon-digital.com:8113/" class="digital-btn">Visit AD.AI website <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                }
+                <p class="product-scope-note">Features, integrations and delivery timelines are confirmed during discovery.</p>
+            </div>
         }
         else
         {
