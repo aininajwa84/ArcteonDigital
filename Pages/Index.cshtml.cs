@@ -33,7 +33,7 @@ public record BusinessSolution(string Key, string Icon, string Category, string 
         "assets" => "sep-symbol-transparent.png",
         "queue" => "byondq-logo.png",
         "nexus" => "arcteon-nexus-wordmark.svg",
-        "adai" => "ad-ai-logo.jpeg",
+        "adai" => "ad-ai-logo-transparent.png",
         "tender" => "tender-transparent.png",
         "rappovena" => "rappovena-transparent.png",
         _ => null

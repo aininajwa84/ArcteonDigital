@@ -131,10 +131,12 @@ public static class WebsiteForms
         else
         {
             var enquirySubject = Value(form, "subject");
-            if (!IsLine(enquirySubject, 300) || message.Length == 0 || form.Files.Count != 0)
-                return Error("Please enter a subject and message.");
-            subject = $"Website enquiry: {enquirySubject}";
-            body.TextBody = $"Name: {name}\nEmail: {email}\n\n{message}";
+            var phone = Value(form, "phone");
+            if (!IsLine(enquirySubject, 300) || message.Length == 0 || form.Files.Count != 0 ||
+                (phone.Length > 0 && !IsLine(phone, 40)))
+                return Error("Please enter a subject and message, and check the phone number if provided.");
+            subject = $"Arcteon Digital enquiry: {enquirySubject}";
+            body.TextBody = $"ARCTEON DIGITAL ENQUIRY\n\nName: {name}\nEmail: {email}\nPhone: {(phone.Length > 0 ? phone : "Not provided")}\n\nMessage\n{message}";
         }
 
         if (!await sender.SendAsync(subject, replyTo, body, career, cancellationToken))
